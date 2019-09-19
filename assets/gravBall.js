@@ -5,6 +5,11 @@ function colorCircle(centerX, centerY, radius, drawColor) {
     ctx.fill();
 }
 
+function colorRect(leftX, topY, width, height, drawColor){
+    ctx.fillStyle = drawColor;
+    ctx.fillRect(leftX, topY, width, height);
+}
+
 //Listen for input
 document.addEventListener('mousedown', function(event) {
     lastDownTarget = event.target;
@@ -34,33 +39,39 @@ function init(){
     window.requestAnimationFrame(gameLoop);
 }
 
+
 //Player Variables
 playerX = 70;
 playerY = 300;
 playerRadius = 30;
 
 //Gravity Variables
-var vx = 0;
 var vy = (Math.random()* - 10) - 5;
 var gravity = 0.5;
 var bounce_factor = 0.8;
 
-var oldTimeStamp;
+//Obstacle variables/function
+var pillarHeight = 450;
+var pillarWidth = 50;
+var gap = 150;
+var constant = pillarHeight + gap
+
+var pillar = [];
+
+pillar[0] = {
+    x : canvas.width,
+    y : 0
+}
+
+
+var oldTimeStamp = 0;
+
 function gameLoop(timeStamp){
-    //CODE BELOW FOR DEVELOPMENT, MEASURES + DISPLAYS FPS
-    //calculate the number of seconds past since the last frame
+    //calculate the time passed
     var secondsPassed = (timeStamp - oldTimeStamp) / 1000;
-    oldTimeStamp = timeStamp;
-    //calculate fps
-    var fps = Math.round(1 / secondsPassed);
-    //Draw number to the screen
-    ctx.fillStyle = 'rgb(138, 138, 138)';
-    ctx.fillRect(0, 0, 150, 50);
-    ctx.font = '25px Arial';
-    ctx.fillStyle = 'black';
-    ctx.fillText("FPS: " + fps, 10, 30);
-    //CODE ABOVE FOR DEVELOPMENT, MEASURES + DISPLAYS FPS
-    update();
+    oldTimeStamp = timeStamp
+
+    update(secondsPassed);
     draw();
 
     // Keep requesting new frames
@@ -68,7 +79,40 @@ function gameLoop(timeStamp){
 }
 
 function update(){
-    playerX += vx;
+    
+    applyGravity();
+    
+    
+}
+
+function draw(){
+    //clear screen before every frame
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+    
+    //draw the ball
+    colorCircle(playerX, playerY, playerRadius, "white")
+
+    //draw the pillars
+    for(var i = 0; i < pillar.length; i++){
+        colorRect(pillar[i].x, pillar[i].y, pillarWidth, pillarHeight, "white")  
+        colorRect(pillar[i].x, pillar[i].y+constant, pillarWidth, pillarHeight, "white")
+        
+        pillar[i].x-= 2;  
+        
+        if(pillar[i].x == 100) {
+            pillar.push({
+                x : canvas.width,
+                y : Math.floor(Math.random()*pillarHeight)-pillarHeight
+            });
+        }
+    } 
+    
+}
+
+function applyGravity() {
+
+    
+    
     playerY += vy;
 
     vy += gravity;
@@ -86,13 +130,5 @@ function update(){
         vx = 0;
         vy *= -bounce_factor;
     }
-    console.log(gravity); 
-}
 
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height)
-    
-  colorCircle(playerX, playerY, playerRadius, "white")
-}
-
-          
+}         
