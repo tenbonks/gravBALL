@@ -5,6 +5,25 @@ function colorCircle(centerX, centerY, radius, drawColor) {
     ctx.fill();
 }
 
+//Listen for input
+document.addEventListener('mousedown', function(event) {
+    lastDownTarget = event.target;
+    gravity = 0;
+    document.addEventListener("mouseup", function(){
+        gravity = 0.5;
+    });
+    
+}, false);
+
+document.addEventListener('keydown', function(event) {
+    if(lastDownTarget == canvas) {
+        gravity = 0;
+        document.addEventListener("keyup", function(){
+            gravity = 0.5;
+        });
+    }
+}, false);
+
 window.onload = init;
 
 function init(){
@@ -15,8 +34,18 @@ function init(){
     window.requestAnimationFrame(gameLoop);
 }
 
-var oldTimeStamp;
+//Player Variables
+playerX = 70;
+playerY = 300;
+playerRadius = 30;
 
+//Gravity Variables
+var vx = 0;
+var vy = (Math.random()* - 10) - 5;
+var gravity = 0.5;
+var bounce_factor = 0.8;
+
+var oldTimeStamp;
 function gameLoop(timeStamp){
     //CODE BELOW FOR DEVELOPMENT, MEASURES + DISPLAYS FPS
     //calculate the number of seconds past since the last frame
@@ -31,17 +60,39 @@ function gameLoop(timeStamp){
     ctx.fillStyle = 'black';
     ctx.fillText("FPS: " + fps, 10, 30);
     //CODE ABOVE FOR DEVELOPMENT, MEASURES + DISPLAYS FPS
-
+    update();
     draw();
 
     // Keep requesting new frames
     window.requestAnimationFrame(gameLoop);
 }
 
-function draw(){
-    var randomColor = Math.random() > 0.5? '#ff8080' : '#0099b0';
-    
-    colorCircle(70, 300, 30, randomColor)
+function update(){
+    playerX += vx;
+    playerY += vy;
+
+    vy += gravity;
+
+    if(
+        playerX + playerRadius > canvas.width ||
+        playerX + playerRadius < 0 ||
+        playerY + playerRadius > canvas.height ||
+        playerY + playerRadius < 0
+    ){
+        playerX = playerX
+        playerY = canvas.height - playerRadius
+
+        //velocity needs to be reset otherwise it will stick to the floor
+        vx = 0;
+        vy *= -bounce_factor;
+    }
+    console.log(gravity); 
 }
 
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height)
+    
+  colorCircle(playerX, playerY, playerRadius, "white")
+}
 
+          
