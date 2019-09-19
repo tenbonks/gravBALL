@@ -1,0 +1,10 @@
+#canvas {
+    width: 800px;
+    height: 600px;
+    background-color: rgb(138, 138, 138);
+}
+
+.game-container {
+    text-align: center;
+    margin: 50px;
+}
