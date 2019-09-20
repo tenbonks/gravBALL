@@ -1,10 +1,11 @@
+//Helper function to draw a CIRCLE
 function colorCircle(centerX, centerY, radius, drawColor) {
     ctx.fillStyle = drawColor;
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
     ctx.fill();
 }
-
+//Helper function to draw a RECTANGLE 
 function colorRect(leftX, topY, width, height, drawColor){
     ctx.fillStyle = drawColor;
     ctx.fillRect(leftX, topY, width, height);
@@ -12,18 +13,23 @@ function colorRect(leftX, topY, width, height, drawColor){
 
 //Listen for input
 document.addEventListener('mousedown', function(event) {
+    //on mousedown, gravity is set to 0
     lastDownTarget = event.target;
     gravity = 0;
     document.addEventListener("mouseup", function(){
+        //on mouse up, gravity is reverted back to 0.5
         gravity = 0.5;
     });
     
 }, false);
 
 document.addEventListener('keydown', function(event) {
+    //if the last target was canvas, allow key input
     if(lastDownTarget == canvas) {
+        //on keydown, gravity is set to 0
         gravity = 0;
         document.addEventListener("keyup", function(){
+            //on keyup, gravity is reverted to 0.5
             gravity = 0.5;
         });
     }
@@ -51,7 +57,7 @@ var gravity = 0.5;
 var bounce_factor = 0.8;
 
 //Obstacle variables/function
-var pillarHeight = 450;
+var pillarHeight = 452;
 var pillarWidth = 50;
 var gap = 150;
 var constant = pillarHeight + gap
@@ -61,6 +67,10 @@ var pillar = [];
 pillar[0] = {
     x : canvas.width,
     y : 0
+}
+
+var pillarCoordinates = function() {
+
 }
 
 
@@ -105,9 +115,19 @@ function draw(){
                 y : Math.floor(Math.random()*pillarHeight)-pillarHeight
             });
         }
+        //collision, reload canvas if player hits obstacle
+        if(playerX + playerRadius >=pillar[i].x && playerX <= pillar[i].x+pillarWidth && (playerY - playerRadius <= pillar[i].y + pillarHeight || playerY + playerRadius >= pillar[i].y+constant)){
+            location.reload();
+        }
+        
     } 
+
+    //detect collision
+    
     
 }
+
+
 
 function applyGravity() {
 
