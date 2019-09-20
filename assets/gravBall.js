@@ -50,6 +50,7 @@ function init(){
 playerX = 70;
 playerY = 300;
 playerRadius = 30;
+var score = 0;
 
 //Gravity Variables
 var vy = (Math.random()* - 10) - 5;
@@ -106,28 +107,43 @@ function draw(){
     for(var i = 0; i < pillar.length; i++){
         colorRect(pillar[i].x, pillar[i].y, pillarWidth, pillarHeight, "white")  
         colorRect(pillar[i].x, pillar[i].y+constant, pillarWidth, pillarHeight, "white")
-        
+        //move the pillars left
         pillar[i].x-= 2;  
-        
+        //IF the pillar is nearly off the canvas
         if(pillar[i].x == 100) {
+            //push the these attributes to the pillar array
             pillar.push({
                 x : canvas.width,
+                //The code below will make each pillar a different height, by using the Math.random() method
                 y : Math.floor(Math.random()*pillarHeight)-pillarHeight
             });
         }
-        //collision, reload canvas if player hits obstacle
+        //detect collision, reload canvas if player hits obstacle
         if(playerX + playerRadius >=pillar[i].x && playerX <= pillar[i].x+pillarWidth && (playerY - playerRadius <= pillar[i].y + pillarHeight || playerY + playerRadius >= pillar[i].y+constant)){
             location.reload();
         }
+        //if the pillar has passed, increment the score
+        
+        if(pillar[i].x == 0){
+            score++;
+            parsedScore = parseInt(score)
+        }
+        var parsedScore;
+        console.log(score);
         
     } 
 
+    ctx.fillStyle = "#000";
+        ctx.font = "20px Verdana";
+        ctx.fillText("Score : "+score,canvas.width-100,20);
     //detect collision
     
     
 }
 
+function calculatePillar() {
 
+}
 
 function applyGravity() {
 
