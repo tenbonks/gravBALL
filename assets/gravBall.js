@@ -70,7 +70,9 @@ pillar[0] = {
     y : 0
 }
 
-var pillarCoordinates = function() {
+
+
+const state = {
 
 }
 
@@ -119,16 +121,16 @@ function draw(){
             });
         }
         //detect collision, reload canvas if player hits obstacle
-        if(playerX + playerRadius >=pillar[i].x && playerX <= pillar[i].x+pillarWidth && (playerY - playerRadius <= pillar[i].y + pillarHeight || playerY + playerRadius >= pillar[i].y+constant)){
+        if((playerX - playerRadius) + (playerRadius * 2) >= pillar[i].x && playerX - playerRadius <= pillar[i].x+pillarWidth && (playerY - playerRadius <= pillar[i].y + pillarHeight || playerY + playerRadius >= pillar[i].y+constant)){
             location.reload();
         }
         //if the pillar has passed, increment the score
         
         if(pillar[i].x == 0){
             score++;
-            parsedScore = parseInt(score)
+            
         }
-        var parsedScore;
+        
         console.log(score);
         
     } 
@@ -141,9 +143,7 @@ function draw(){
     
 }
 
-function calculatePillar() {
 
-}
 
 function applyGravity() {
 
