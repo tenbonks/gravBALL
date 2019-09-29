@@ -1,7 +1,8 @@
 #canvas {
     width: 800px;
     height: 600px;
-    background-color: rgb(138, 138, 138);
+    background: rgb(34, 193, 195);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(228, 224, 214, 1) 100%);
     border: 2px solid rgb(138, 138, 138);
 }
 
