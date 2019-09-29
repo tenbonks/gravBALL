@@ -50,6 +50,7 @@ var gap = 150;
 var constant = pillarHeight + gap
 var pillarSpeed = 2;
 
+
 var pillar = [];
 
 pillar[0] = {
@@ -133,7 +134,7 @@ function applyGravity() {
         //velocity needs to be reset otherwise it will stick to the floor
         vx = 0;
         vy *= -bounce_factor;
-    } else if(playerY + playerRadius < 0){
+    } else if(playerY - playerRadius < 0){
         playerX = playerX
         playerY = 0 + playerRadius;
 
