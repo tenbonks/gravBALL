@@ -1,12 +1,38 @@
+body {
+    background-color: #346960;
+    background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
 #canvas {
     width: 800px;
     height: 600px;
     background: rgb(34, 193, 195);
     background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(228, 224, 214, 1) 100%);
     border: 2px solid rgb(138, 138, 138);
+    border-radius: 10px;
 }
 
 .game-container {
     text-align: center;
-    margin: 50px;
+}
+
+h1 {
+    font-family: "Monoton", cursive;
+    color: white;
+}
+
+.opaque-info-box {
+
+    display: inline-block;
+    margin: 0 auto;
+    width: auto;
+    border: 2px solid aliceblue;
+    border-radius: 25px;
+    background-color: aliceblue;
+    font-family: "Righteous", cursive;
+    color: white;
+    background-color: #040f12;
+    background-image: url("https://www.transparenttextures.com/patterns/subtle-white-feathers.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
