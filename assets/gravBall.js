@@ -48,7 +48,7 @@ var pillarHeight = 452;
 var pillarWidth = 50;
 var gap = 150;
 var constant = pillarHeight + gap
-var pillarSpeed = 2;
+var pillarSpeed = 2.5;
 
 
 var pillar = [];
@@ -116,7 +116,7 @@ function draw(){
 
     ctx.fillStyle = "#000";
         ctx.font = "20px Verdana";
-        ctx.fillText("Score : "+score,canvas.width-100,25);
+        ctx.fillText("Score : "+score,canvas.width/2-50,25);
     
 }
 
