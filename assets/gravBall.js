@@ -6,7 +6,7 @@ function init(){
     window.requestAnimationFrame(gameLoop);
 }
 //Listen for input
-document.addEventListener('mousedown', function(event) {
+canvas.addEventListener('mousedown', function(event) {
     //on mousedown, gravity is set to 0
     lastDownTarget = event.target;
     gravity = 0;
@@ -17,7 +17,7 @@ document.addEventListener('mousedown', function(event) {
     
 }, false);
 
-document.addEventListener('keydown', function(event) {
+window.addEventListener('keydown', function(event) {
     //if the last target was canvas, allow key input
     if(lastDownTarget == canvas) {
         //on keydown, gravity is set to 0
@@ -31,6 +31,9 @@ document.addEventListener('keydown', function(event) {
 
 window.onload = init;
 
+//Game vatiables
+var highScore = 0;
+var showLoseScreen = false;
 
 //Player Variables
 playerX = 70;
@@ -48,7 +51,7 @@ var pillarHeight = 452;
 var pillarWidth = 50;
 var gap = 150;
 var constant = pillarHeight + gap
-var pillarSpeed = 2.5;
+var pillarSpeed = 2.0;
 
 
 var pillar = [];
@@ -86,7 +89,7 @@ function draw(){
     
     //draw the ball
     colorCircle(playerX, playerY, playerRadius, "white")
-
+    
     //draw the pillars
     for(var i = 0; i < pillar.length; i++){
         colorRect(pillar[i].x, pillar[i].y, pillarWidth, pillarHeight, "white")  
@@ -104,7 +107,8 @@ function draw(){
         }
         //detect collision, reload canvas if player hits obstacle
         if((playerX - playerRadius) + (playerRadius * 2) >=pillar[i].x && (playerX - playerRadius) <= pillar[i].x+pillarWidth && (playerY - playerRadius <= pillar[i].y + pillarHeight || playerY + playerRadius >= pillar[i].y+constant)){
-            location.reload();
+            // location.reload();
+            showLoseScreen == true;
         }
         //if the pillar has passed, increment the score
         if(pillar[i].x == playerX){
