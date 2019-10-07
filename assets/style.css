@@ -9,7 +9,7 @@ body {
     height: 600px;
     background: rgb(34, 193, 195);
     background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(228, 224, 214, 1) 100%);
-    border: 2px solid rgb(138, 138, 138);
+    border: 2px solid white;
     border-radius: 10px;
 }
 
@@ -20,6 +20,16 @@ body {
 h1 {
     font-family: "Monoton", cursive;
     color: white;
+}
+
+#logo {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: rgb(255,255,255, 0.2);
+    width: auto;
+    border-radius: 20px;
+    
 }
 
 .opaque-info-box {
