@@ -59,7 +59,7 @@ var pillarHeight = 452;
 var pillarWidth = 50;
 var gap = 150;
 var constant = pillarHeight + gap
-var pillarSpeed = 2.0;
+var pillarSpeed = 5;
 var pillarX;
 var pillarY;
 
@@ -69,6 +69,8 @@ pillar[0] = {
     x: canvas.width,
     y: 0
 }
+
+
 
 var oldTimeStamp = 0;
 
@@ -82,13 +84,16 @@ function movePillars() {
     //move the pillars left
     pillarX -= pillarSpeed;
     //IF the pillar is nearly off the canvas
-    if (pillarX == 100) {
+    if (pillarX == (0 -  pillarWidth)) {
+
+        pillarX = canvas.width;
+        pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
         //push the these attributes to the pillar array
-        pillar.push({
-            x: canvas.width,
-            //The code below will make each pillar a different height, by using the Math.random() method
-            y: Math.floor(Math.random() * pillarHeight) - pillarHeight
-        });
+        // pillar.push({
+        //     x: canvas.width,
+        //     //The code below will make each pillar a different height, by using the Math.random() method
+        //     y: Math.floor(Math.random() * pillarHeight) - pillarHeight
+        // });
         console.log("condition was met")
     }
 }
@@ -116,12 +121,14 @@ function gameLoop(timeStamp) {
 
     if (!paused) {
         update(secondsPassed);
+        
+        draw();
     }
 
-    draw();
-
     // Keep requesting new frames
+    
     window.requestAnimationFrame(gameLoop);
+    
 }
 
 function update() {
@@ -129,6 +136,7 @@ function update() {
     movePillars();
     incrementScore();
     detectCollision();
+    console.log(pillar[0]);
 }
 
 function draw() {
