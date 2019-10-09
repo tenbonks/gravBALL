@@ -29,9 +29,9 @@ window.addEventListener('keydown', function (event) {
     }
 }, false);
 
-window.addEventListener('keydown', function (e) {
-    var key = e.keyCode;
-    if (key === 13) // enter key
+canvas.addEventListener('mousedown', function () {
+    
+    if (paused === true) // enter key
     {
         togglePause();
     }
@@ -43,11 +43,11 @@ window.onload = init;
 var paused = true;
 
 //Player Variables
-playerX = 70;
-playerY = 300;
-playerRadius = 30;
+var playerX = 70;
+var playerY = 300;
+var playerRadius = 30;
 var score = 0;
-playerXCentered = playerX - playerRadius;
+var playerXCentered = playerX - playerRadius;
 
 //Gravity Variables
 var vy = (Math.random() * -10) - 5;
@@ -101,8 +101,9 @@ function movePillars() {
 function detectCollision() {
     //detect collision, reload canvas if player hits obstacle
     if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillarX && (playerX - playerRadius) <= pillarX + pillarWidth && (playerY - playerRadius <= pillarY + pillarHeight || playerY + playerRadius >= pillarY + constant)) {
+        
         alert(`GAME OVER, YOU SCORED: ${score}`);
-        document.location.reload();
+        location.reload();
 
     }
 }
