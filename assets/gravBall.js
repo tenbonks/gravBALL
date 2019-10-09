@@ -61,6 +61,7 @@ var gap = 150;
 var constant = pillarHeight + gap
 var pillarSpeed = 2.0;
 var pillarX;
+var pillarY;
 
 var pillar = [];
 
@@ -71,6 +72,43 @@ pillar[0] = {
 
 var oldTimeStamp = 0;
 
+//for loop, allows for new pillars to be pushed to
+for (var i = 0; i < pillar.length; i++) {
+    pillarX = pillar[i].x
+    pillarY = pillar[i].y
+}
+
+function movePillars() {
+    //move the pillars left
+    pillarX -= pillarSpeed;
+    //IF the pillar is nearly off the canvas
+    if (pillarX == 100) {
+        //push the these attributes to the pillar array
+        pillar.push({
+            x: canvas.width,
+            //The code below will make each pillar a different height, by using the Math.random() method
+            y: Math.floor(Math.random() * pillarHeight) - pillarHeight
+        });
+        console.log("condition was met")
+    }
+}
+
+function detectCollision() {
+    //detect collision, reload canvas if player hits obstacle
+    if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillarX && (playerX - playerRadius) <= pillarX + pillarWidth && (playerY - playerRadius <= pillarY + pillarHeight || playerY + playerRadius >= pillarY + constant)) {
+        alert(`GAME OVER, YOU SCORED: ${score}`);
+        document.location.reload();
+
+    }
+}
+
+function incrementScore() {
+    //if the pillar has passed, increment the score
+    if (pillarX == playerX) {
+        score++;
+    }
+}
+
 function gameLoop(timeStamp) {
     //calculate the time passed
     var secondsPassed = (timeStamp - oldTimeStamp) / 1000;
@@ -79,7 +117,7 @@ function gameLoop(timeStamp) {
     if (!paused) {
         update(secondsPassed);
     }
-    
+
     draw();
 
     // Keep requesting new frames
@@ -87,9 +125,10 @@ function gameLoop(timeStamp) {
 }
 
 function update() {
-
     applyGravity();
-
+    movePillars();
+    incrementScore();
+    detectCollision();
 }
 
 function draw() {
@@ -100,45 +139,18 @@ function draw() {
     colorCircle(playerX, playerY, playerRadius, "white")
 
     //draw the pillars
-    for (var i = 0; i < pillar.length; i++) {
-        colorRect(pillar[i].x, pillar[i].y, pillarWidth, pillarHeight, "white")
-        colorRect(pillar[i].x, pillar[i].y + constant, pillarWidth, pillarHeight, "white")
-        //move the pillars left
-        pillar[i].x -= pillarSpeed;
-        //IF the pillar is nearly off the canvas
+    colorRect(pillarX, pillarY, pillarWidth, pillarHeight, "white")
+    colorRect(pillarX, pillarY + constant, pillarWidth, pillarHeight, "white")
 
-        
-
-        if (pillar[i].x == 100) {
-            //push the these attributes to the pillar array
-            pillar.push({
-                x: canvas.width,
-                //The code below will make each pillar a different height, by using the Math.random() method
-                y: Math.floor(Math.random() * pillarHeight) - pillarHeight
-            });
-        }
-        //detect collision, reload canvas if player hits obstacle
-        if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillar[i].x && (playerX - playerRadius) <= pillar[i].x + pillarWidth && (playerY - playerRadius <= pillar[i].y + pillarHeight || playerY + playerRadius >= pillar[i].y + constant)) {
-            alert(`GAME OVER, YOU SCORED: ${score}`);
-            document.location.reload();
-            // clearInterval(interval); // Needed for Chrome to end game
-        }
-        //if the pillar has passed, increment the score
-        if (pillar[i].x == playerX) {
-            score++;
-
-        }
-        console.log(pillarSpeed);
-    }
-
+    //draw the score
     ctx.fillStyle = "#000";
     ctx.font = "20px Verdana";
     ctx.fillText("Score : " + score, canvas.width / 2 - 50, 25);
 
-    
+    console.log(`pillarX is ${pillarX}, pillarY is ${pillarY}`);
+
 }
 
-console.log(pillarX);
 function togglePause() {
     if (!paused) {
         paused = true;
