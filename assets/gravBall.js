@@ -22,18 +22,25 @@ window.addEventListener('keydown', function (event) {
     if (lastDownTarget == canvas) {
         //on keydown, gravity is set to 0
         gravity = 0;
-        document.addEventListener("keyup", function() {
+        document.addEventListener("keyup", function () {
             //on keyup, gravity is reverted to 0.5
             gravity = 0.5;
         });
     }
 }, false);
 
+window.addEventListener('keydown', function (e) {
+    var key = e.keyCode;
+    if (key === 13) // enter key
+    {
+        togglePause();
+    }
+});
+
 window.onload = init;
 
-//Game vatiables
-// var highScore = 0;
-// var showLoseScreen = false;
+//Game variables
+var paused = true;
 
 //Player Variables
 playerX = 70;
@@ -53,7 +60,7 @@ var pillarWidth = 50;
 var gap = 150;
 var constant = pillarHeight + gap
 var pillarSpeed = 2.0;
-
+var pillarX;
 
 var pillar = [];
 
@@ -69,7 +76,10 @@ function gameLoop(timeStamp) {
     var secondsPassed = (timeStamp - oldTimeStamp) / 1000;
     oldTimeStamp = timeStamp
 
-    update(secondsPassed);
+    if (!paused) {
+        update(secondsPassed);
+    }
+    
     draw();
 
     // Keep requesting new frames
@@ -85,7 +95,7 @@ function update() {
 function draw() {
     //clear screen before every frame
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    
+
     //draw the ball
     colorCircle(playerX, playerY, playerRadius, "white")
 
@@ -96,6 +106,9 @@ function draw() {
         //move the pillars left
         pillar[i].x -= pillarSpeed;
         //IF the pillar is nearly off the canvas
+
+        
+
         if (pillar[i].x == 100) {
             //push the these attributes to the pillar array
             pillar.push({
@@ -121,6 +134,17 @@ function draw() {
     ctx.fillStyle = "#000";
     ctx.font = "20px Verdana";
     ctx.fillText("Score : " + score, canvas.width / 2 - 50, 25);
+
+    
+}
+
+console.log(pillarX);
+function togglePause() {
+    if (!paused) {
+        paused = true;
+    } else if (paused) {
+        paused = false;
+    }
 
 }
 
