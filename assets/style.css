@@ -2,13 +2,15 @@ body {
     background-color: #346960;
     background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+   
+    
 }
 
 #canvas {
     width: 800px;
     height: 600px;
     background: rgb(34, 193, 195);
-    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(228, 224, 214, 1) 100%);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgb(156, 113, 26) 100%);
     border: 2px solid white;
     border-radius: 10px;
 }
