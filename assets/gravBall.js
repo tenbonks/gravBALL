@@ -30,10 +30,11 @@ window.addEventListener('keydown', function (event) {
 }, false);
 
 canvas.addEventListener('mousedown', function () {
-    
+
     if (paused === true) // enter key
     {
         togglePause();
+
     }
 });
 
@@ -84,24 +85,18 @@ function movePillars() {
     //move the pillars left
     pillarX -= pillarSpeed;
     //IF the pillar is nearly off the canvas
-    if (pillarX == (0 -  pillarWidth)) {
+    if (pillarX == (0 - pillarWidth)) {
 
         pillarX = canvas.width;
         pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
-        //push the these attributes to the pillar array
-        // pillar.push({
-        //     x: canvas.width,
-        //     //The code below will make each pillar a different height, by using the Math.random() method
-        //     y: Math.floor(Math.random() * pillarHeight) - pillarHeight
-        // });
-        console.log("condition was met")
+
     }
 }
 
 function detectCollision() {
     //detect collision, reload canvas if player hits obstacle
     if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillarX && (playerX - playerRadius) <= pillarX + pillarWidth && (playerY - playerRadius <= pillarY + pillarHeight || playerY + playerRadius >= pillarY + constant)) {
-        
+
         alert(`GAME OVER, YOU SCORED: ${score}`);
         location.reload();
 
@@ -122,14 +117,14 @@ function gameLoop(timeStamp) {
 
     if (!paused) {
         update(secondsPassed);
-        
+
         draw();
     }
 
     // Keep requesting new frames
-    
+
     window.requestAnimationFrame(gameLoop);
-    
+
 }
 
 function update() {
