@@ -112,9 +112,6 @@ function detectCollision() {
         score = 0
         pillarX = canvas.width
         pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
-        // alert(`GAME OVER, YOU SCORED: ${score}`);
-        // reloadGame();
-
     }
 }
 
@@ -196,6 +193,7 @@ function drawLose() {
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 25);
     ctx.fillText(`High Score: ${highScore}`,canvas.width / 2 - 60, canvas.height / 2 - 0)
     ctx.fillText(`Click To Restart`,canvas.width / 2 - 70, canvas.height - 20)
+
     
 }
 
@@ -250,6 +248,3 @@ function colorRect(leftX, topY, width, height, drawColor) {
     ctx.fillRect(leftX, topY, width, height);
 }
 
-function reloadGame() {
-    location.reload();
-}
