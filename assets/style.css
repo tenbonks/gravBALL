@@ -10,7 +10,7 @@ body {
     width: 800px;
     height: 600px;
     background: rgb(34, 193, 195);
-    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgb(156, 113, 26) 100%);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgb(28, 79, 88) 100%);
     border: 2px solid white;
     border-radius: 10px;
 }
@@ -35,7 +35,6 @@ h1 {
 }
 
 .opaque-info-box {
-
     display: inline-block;
     margin: 0 auto;
     width: auto;

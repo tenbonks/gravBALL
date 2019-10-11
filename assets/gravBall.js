@@ -7,10 +7,15 @@ function init() {
 }
 //Listen for input
 canvas.addEventListener('mousedown', function (event) {
+    gameStarted = true;
+    if (paused === true && gameLost === false) {
+        togglePause();
+    }
+
     //on mousedown, gravity is set to 0
     lastDownTarget = event.target;
     gravity = 0;
-    document.addEventListener("mouseup", function () {
+    canvas.addEventListener("mouseup", function () {
         //on mouse up, gravity is reverted back to 0.5
         gravity = 0.5;
     });
@@ -29,19 +34,19 @@ window.addEventListener('keydown', function (event) {
     }
 }, false);
 
+//this listener will start the game, when the page is loaded it is set to pause, click to set pause to false
 canvas.addEventListener('mousedown', function () {
 
-    if (paused === true) // enter key
-    {
-        togglePause();
 
-    }
 });
 
 window.onload = init;
 
 //Game variables
 var paused = true;
+var gameStarted = false;
+var gameLost = false;
+
 
 //Player Variables
 var playerX = 70;
@@ -71,7 +76,7 @@ pillar[0] = {
     y: 0
 }
 
-
+console.log(gameStarted);
 
 var oldTimeStamp = 0;
 
@@ -97,19 +102,24 @@ function detectCollision() {
     //detect collision, reload canvas if player hits obstacle
     if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillarX && (playerX - playerRadius) <= pillarX + pillarWidth && (playerY - playerRadius <= pillarY + pillarHeight || playerY + playerRadius >= pillarY + constant)) {
 
-        alert(`GAME OVER, YOU SCORED: ${score}`);
-        location.reload();
+        
+        togglePause();
+        pillarX = canvas.width
+        pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
+        // alert(`GAME OVER, YOU SCORED: ${score}`);
+        // reloadGame();
 
     }
 }
 
 function incrementScore() {
     //if the pillar has passed, increment the score
-    if (pillarX == playerX) {
+    if (pillarX == playerX - playerRadius - pillarWidth) {
         score++;
     }
 }
 
+//THE GAMELOOP, this function calls the draw functions, and also the update function, over and over again making the pixels move
 function gameLoop(timeStamp) {
     //calculate the time passed
     var secondsPassed = (timeStamp - oldTimeStamp) / 1000;
@@ -118,9 +128,14 @@ function gameLoop(timeStamp) {
     if (!paused) {
         update(secondsPassed);
 
-        draw();
+        drawGame();
+    } else if (paused && gameStarted === false) {
+        drawStart();
+    } else {
+        drawLose();
     }
 
+    console.log(gameStarted)
     // Keep requesting new frames
 
     window.requestAnimationFrame(gameLoop);
@@ -132,10 +147,9 @@ function update() {
     movePillars();
     incrementScore();
     detectCollision();
-    console.log(pillar[0]);
 }
 
-function draw() {
+function drawGame() {
     //clear screen before every frame
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -147,12 +161,30 @@ function draw() {
     colorRect(pillarX, pillarY + constant, pillarWidth, pillarHeight, "white")
 
     //draw the score
-    ctx.fillStyle = "#000";
-    ctx.font = "20px Verdana";
+    ctx.fillStyle = "#fff";
+    ctx.font = "20px Righteous";
     ctx.fillText("Score : " + score, canvas.width / 2 - 50, 25);
 
-    console.log(`pillarX is ${pillarX}, pillarY is ${pillarY}`);
+    //draw highscore
+    ctx.fillStyle = "000";
+    ctx.font = ""
+}
 
+function drawStart() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.fillStyle = "#fff";
+    ctx.font = "20px Righteous";
+    ctx.fillText("Click to Start", canvas.width / 2 - 70, canvas.height / 2 - 10);
+}
+
+function drawLose() {
+    
+    gameLost === true;
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.fillStyle = "#fff";
+    ctx.font = "20px Righteous";
+    ctx.fillText("You Lose!", canvas.width / 2 - 50, canvas.height / 2 - 50);
+    ctx.fillText(`Scored: ${score}`, canvas.width / 2 - 50, canvas.height / 2 - 25);
 }
 
 function togglePause() {
@@ -200,4 +232,8 @@ function colorCircle(centerX, centerY, radius, drawColor) {
 function colorRect(leftX, topY, width, height, drawColor) {
     ctx.fillStyle = drawColor;
     ctx.fillRect(leftX, topY, width, height);
+}
+
+function reloadGame() {
+    location.reload();
 }

@@ -11,6 +11,11 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 #UX
 
+It is aimed for the casual gamer, who like *physic based reaction games*, such as the classic Helicopter game, well... This is like that, but with a twist. 
+
+The website consits of simply the title, the game and a information box displaying controls. the website is essentialy a landing page so no navigation is required, meaning there is no navigation through the site, other than getting straight to the game.
+
+The controls are intuitive, simply hold down click/spacebar
 ---
 
 #Features
