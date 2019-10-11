@@ -11,41 +11,72 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="assets\fonts\timeburnerbold.ttf">
-    <link href="https://fonts.googleapis.com/css?family=Turret+Road:400,500,700,800|Monoton|Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Turret+Road:400,500,700,800|Monoton|Righteous&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-     
-    <article class="main container-fluid"> 
+
+    <article class="main container-fluid no-gutters">
         <!--LOGO-->
+
         <section class="logo">
             <div class="row">
-                <div id="logo" class="container mt-3 mb-5 text-center">
-                        <h1>gravBALL</h1>
+                <div id="logo" class="container-fluid mb-5 text-center">
+                    <h1>gravBALL</h1>
                 </div>
             </div>
         </section>
         <!--GAME-->
-        
+
         <section class="game">
-            
+
             <div class="container game-container mb-5">
-                <canvas id="canvas" width="800" height="600"><div class="start-image">Get Ready!</div></canvas>
+                <canvas id="canvas" width="800" height="600">
+                    <div class="start-image">Get Ready!</div>
+                </canvas>
             </div>
             <div class="container controls-container text-center">
-                    <div class="opaque-info-box p-2">
-                        <h3 class="mb-3">How To Play</h3>
-                        <p>Click the box above to start.</p>
-                        <p>HOLD DOWN click, or spacebar to turn gravity off, time this with the bounce to manoeuvre past obstacles</p>
+                <div class="opaque-info-box p-2 mb-5">
+                    <h3 class="mb-3">How To Play</h3>
+                    <p>Click the box above to start.</p>
+                    <p>HOLD DOWN click, or spacebar to turn gravity off, time this with the bounce to manoeuvre past
+                        obstacles</p>
                 </div>
         </section>
-        <!--LEADERBOARD-->
-        <section class="leaderboard">
-         
+
+        <!--Footer-->
+        <section class="footer ">
+
+            <footer class="container-fluid">
+
+                <div class="row footer-details">
+                    <div class="col-sm-6">
+                        <h5 class="uppercase general-sub">About</h5>
+                        <p class="">
+                            A game built on HTML5, use gravity and timing to manipulate the bouncing ball and past the obstacles.
+                            <br>
+                            Can you get a new highscore!?
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5 class="uppercase general-sub">Contact</h5>
+                        <p class="inline-block">
+                            Want to collaborate? Report a bug? contact me by clicking the button<span>
+                                <button type="button" class="btn btn-primary btn-sm ml-2" data-toggle="modal"
+                                    data-target="#contactModal">
+                                    Contact Me
+                                </button></span></p>
+                    </div>
+                </div>
+
+            </footer>
+
         </section>
-          
-    </article>
+        <!--/.Footer-->
+
+</article>
 
     <!-------------------------------------------------------------------------------------------------------------------LOAD SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
