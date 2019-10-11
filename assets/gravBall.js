@@ -194,7 +194,9 @@ function drawLose() {
     
     ctx.fillText("You Lose!", canvas.width / 2 - 50, canvas.height / 2 - 50);
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 25);
-    ctx.fillText(`High Score: ${highScore}`,canvas.width / 2 - 50, canvas.height / 2 - 0)
+    ctx.fillText(`High Score: ${highScore}`,canvas.width / 2 - 60, canvas.height / 2 - 0)
+    ctx.fillText(`Click To Restart`,canvas.width / 2 - 60, canvas.height - 20)
+    
 }
 
 //A pausing function, it is used in conjunction with the gameLoop to help implement the game states
