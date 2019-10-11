@@ -11,7 +11,7 @@ canvas.addEventListener('mousedown', function (event) {
     if (paused === true && gameLost === false) {
         togglePause();
     }
-
+    
     //on mousedown, gravity is set to 0
     lastDownTarget = event.target;
     gravity = 0;
@@ -23,8 +23,8 @@ canvas.addEventListener('mousedown', function (event) {
 }, false);
 
 window.addEventListener('keydown', function (event) {
-    //if the last target was canvas, allow key input
-    if (lastDownTarget == canvas) {
+    //if the last target was canvas, allow key input, NOTE KEYCODE 32 is SPACEBAR 
+    if (lastDownTarget == canvas && event.keyCode == 32) { 
         //on keydown, gravity is set to 0
         gravity = 0;
         document.addEventListener("keyup", function () {
@@ -46,14 +46,15 @@ window.onload = init;
 var paused = true;
 var gameStarted = false;
 var gameLost = false;
+var score = 0;
+var scoreLast = 0;
+var highScore = 0;
 
 
 //Player Variables
 var playerX = 70;
 var playerY = 300;
 var playerRadius = 30;
-var score = 0;
-var playerXCentered = playerX - playerRadius;
 
 //Gravity Variables
 var vy = (Math.random() * -10) - 5;
@@ -104,6 +105,11 @@ function detectCollision() {
 
         
         togglePause();
+        if (scoreLast >= highScore){
+            highScore = scoreLast;
+        }
+        scoreLast = score;
+        score = 0
         pillarX = canvas.width
         pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
         // alert(`GAME OVER, YOU SCORED: ${score}`);
@@ -170,6 +176,7 @@ function drawGame() {
     ctx.font = ""
 }
 
+//When the page is loaded the canvas will display information to prompt the user to click the canvas
 function drawStart() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "#fff";
@@ -177,16 +184,20 @@ function drawStart() {
     ctx.fillText("Click to Start", canvas.width / 2 - 70, canvas.height / 2 - 10);
 }
 
+//If the ball collides this screen will appear, it is a losing splash screen
 function drawLose() {
     
     gameLost === true;
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "#fff";
     ctx.font = "20px Righteous";
+    
     ctx.fillText("You Lose!", canvas.width / 2 - 50, canvas.height / 2 - 50);
-    ctx.fillText(`Scored: ${score}`, canvas.width / 2 - 50, canvas.height / 2 - 25);
+    ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 25);
+    ctx.fillText(`High Score: ${highScore}`,canvas.width / 2 - 50, canvas.height / 2 - 0)
 }
 
+//A pausing function, it is used in conjunction with the gameLoop to help implement the game states
 function togglePause() {
     if (!paused) {
         paused = true;
@@ -196,26 +207,29 @@ function togglePause() {
 
 }
 
+
+
+//Applies gravity to the playersY coordinate, also will bounce off the floor depending on momentum the ball hit
 function applyGravity() {
     playerY += vy;
     vy += gravity;
 
-    if (playerX + playerRadius > canvas.width ||
-        playerX + playerRadius < 0 ||
-        playerY + playerRadius > canvas.height
-    ) {
+    //if the player hits the bottom of the canvas
+    if (playerY + playerRadius > canvas.height) {
+        //player Y cant exceed the canvas height - playerRadius, this stops it from going off screen
         playerX = playerX
         playerY = canvas.height - playerRadius
 
         //velocity needs to be reset otherwise it will stick to the floor
         vx = 0;
         vy *= -bounce_factor;
+    //if the player hits the top of canvas  
     } else if (playerY - playerRadius < 0) {
         playerX = playerX
         playerY = 0 + playerRadius;
-
+        //the same as the code above, this time player Y cant exceed the top, and will bounce from the top
         vx = 0;
-        vy *= bounce_factor;
+        vy *= -bounce_factor;
     }
 
 }
