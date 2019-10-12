@@ -40,10 +40,10 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 #Credits
 **Content**
 **Media**
-Game sound effects - Kastenfrosch via freesound.org 
+PaulMorek via freesound | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
 **Acknowledgements**
 Chris Deleon for basics in canvas game making, via tennis udemy course
-Code Explained for inspiration on implementing the pillars, via flappy bird tutorial
+Code Explained (Youtube Channel) for inspiration on implementing the pillars, via flappy bird tutorial
 Spicy Yoghurt for inspiration on implementing a game loop, via a blog post on spicyyoghurt.com
 
 library/frameworks used
