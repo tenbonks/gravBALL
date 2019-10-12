@@ -74,7 +74,7 @@ var gameLost = false;
 var score = 0;
 var scoreLast = 0;
 var highScore = 0;
-localStorage.setItem("highScore", 0)
+
 
 //Player Variables
 var playerX = 70;
@@ -228,6 +228,7 @@ function drawLose() {
     ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 70, canvas.height / 2 - 0)
     ctx.fillText(`Click To Restart`, canvas.width / 2 - 75, canvas.height - 200)
 
+    console.log(localStorage.getItem("highScore"))
 
 }
 
