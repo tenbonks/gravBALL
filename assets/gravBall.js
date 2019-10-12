@@ -74,6 +74,7 @@ var gameLost = false;
 var score = 0;
 var scoreLast = 0;
 var highScore = 0;
+localStorage.setItem("highScore", highScore)
 
 
 //Player Variables
@@ -129,8 +130,10 @@ function detectCollision() {
 
         //if the player collides, pauses the drawGame function and will run the drawLose function
         togglePause();
+        
         //then set scoreLast to what was just scored, this is displayed in the drawLose function
         scoreLast = score;
+        checkHighScore();
         //reset the score to 0, needs to be after the line of code above
         score = 0
         //reset the pillars to end of canvas and the gap will be set at a random height
@@ -145,6 +148,9 @@ function incrementScore() {
         score++;
         SCORE_BEEP.play();
     }
+}
+
+function checkHighScore() {
     if (scoreLast >= parseInt(localStorage.getItem("highScore"))) {
         highScore = scoreLast;
         localStorage.setItem("highScore", scoreLast)
@@ -265,6 +271,7 @@ function applyGravity() {
     }
 };
 
+//this needs to be worked ---------------------------------------------------------------------------------------------------------------------- !?-ATTENTION-?!
 function isCanvasSquished() {
     canvasSquished = $("#canvas").css("width")
     setTimeout(function(){
