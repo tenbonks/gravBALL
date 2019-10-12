@@ -6,6 +6,7 @@ function init() {
     window.requestAnimationFrame(gameLoop);
 }
 //Listen for input
+//important that this code is listening for event in canvas element, as it sets the target for key input to register
 canvas.addEventListener('mousedown', function (event) {
     gameStarted = true;
     if (paused === true && gameLost === false) {
@@ -22,9 +23,11 @@ canvas.addEventListener('mousedown', function (event) {
 
 }, false);
 
-window.addEventListener('keydown', function (event) {
+window.addEventListener('keydown', function (e) {
     //if the last target was canvas, allow key input, NOTE KEYCODE 32 is SPACEBAR 
-    if (lastDownTarget == canvas && event.keyCode == 32) { 
+    if (lastDownTarget == canvas && e.keyCode == 32) { 
+        //the line below disables default input to html document, this stops page scroll when spacebar is pressed
+        e.preventDefault();
         //on keydown, gravity is set to 0
         gravity = 0;
         document.addEventListener("keyup", function () {
@@ -200,7 +203,6 @@ function togglePause() {
     } else if (paused) {
         paused = false;
     }
-
 }
 
 //Applies gravity to the playersY coordinate, also will bounce off the floor depending on momentum the ball hit
@@ -225,7 +227,6 @@ function applyGravity() {
         vx = 0;
         vy *= -bounce_factor;
     }
-
 }
 
 //HELPER FUNCTIONS AT BOTTOM OF SCRIPT
