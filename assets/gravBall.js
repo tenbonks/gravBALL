@@ -23,6 +23,9 @@ canvas.addEventListener('mousedown', function (event) {
 
 }, false);
 
+//jQuery selection used to disable the context menu within the canvas
+$('body').on('contextmenu', '#canvas', function(e){ return false; });
+
 window.addEventListener('keydown', function (e) {
     //if the last target was canvas, allow key input, NOTE KEYCODE 32 is SPACEBAR 
     if (lastDownTarget == canvas && e.keyCode == 32) { 
@@ -190,7 +193,7 @@ function drawLose() {
     }
     ctx.font = "20px Righteous";
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 35);
-    ctx.fillText(`High Score: ${highScore}`,canvas.width / 2 - 60, canvas.height / 2 - 0)
+    ctx.fillText(`High Score: ${highScore}`,canvas.width / 2 - 70, canvas.height / 2 - 0)
     ctx.fillText(`Click To Restart`,canvas.width / 2 - 75, canvas.height - 200)
 
     
