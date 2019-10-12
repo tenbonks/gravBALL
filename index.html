@@ -31,19 +31,27 @@
         <!--GAME-->
 
         <section class="game">
-        <div class="row no-gutters">
-            <div class="container game-container text-center d-none d-sm-block col-12 mb-5">
-                <canvas id="canvas" width="800" height="600"></canvas>
+            <div class="row no-gutters">
+                <div class="container game-container text-center d-none d-sm-block col-12 mb-5">
+                    <canvas id="canvas" width="800" height="600"></canvas>
+                </div>
+                <!--Add a container here which will show only on small devices alerting them that it will not work-->
             </div>
-            <!--Add a container here which will show only on small devices alerting them that it will not work-->
-        </div>    
             <div class="container controls-container text-center">
                 <div class="opaque-info-box p-2 mb-5">
-                    <h3 class="mb-3">How To Play</h3>
-                    <p>Click the box above to start.</p>
-                    <p>HOLD DOWN click, or spacebar to turn gravity off, time this with the bounce to manoeuvre past
-                        obstacles</p>
+                    <div class="controls d-none d-sm-block">
+                        <h3 class="mb-3">How To Play</h3>
+                        <p>Click the box above to start.</p>
+                        <p>HOLD DOWN click, or spacebar to turn gravity off, time this with the bounce to manoeuvre past
+                            obstacles</p>
+                    </div>
+
+                    <div class="small-screen-info d-block d-sm-none">
+                        <h3 class="mb-3">Sorry!</h3>
+                        <p>This devices screen is just to small to fit all the fun on.</p>
+                    </div>
                 </div>
+
         </section>
 
         <!-- Footer-->
@@ -55,7 +63,8 @@
                     <div class="col-sm-12 col-md-6">
                         <h5 class="uppercase general-sub">About</h5>
                         <p class="">
-                            A game built on HTML5, use gravity and timing to manipulate the bouncing ball and past the obstacles.
+                            A game built on HTML5, use gravity and timing to manipulate the bouncing ball and past the
+                            obstacles.
                             <br>
                             Can you get a new highscore!?
                         </p>
@@ -76,7 +85,7 @@
         </section>
         <!--/.Footer -->
 
-</article>
+    </article>
 
     <!-------------------------------------------------------------------------------------------------------------------LOAD SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
