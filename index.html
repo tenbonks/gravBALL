@@ -31,12 +31,12 @@
         <!--GAME-->
 
         <section class="game">
-
-            <div class="container game-container mb-5">
-                <canvas id="canvas" width="800" height="600">
-                    <div class="start-image">Get Ready!</div>
-                </canvas>
+        <div class="row no-gutters">
+            <div class="container game-container text-center d-none d-sm-block col-12 mb-5">
+                <canvas id="canvas" width="800" height="600"></canvas>
             </div>
+            <!--Add a container here which will show only on small devices alerting them that it will not work-->
+        </div>    
             <div class="container controls-container text-center">
                 <div class="opaque-info-box p-2 mb-5">
                     <h3 class="mb-3">How To Play</h3>
@@ -52,7 +52,7 @@
             <footer class="container-fluid">
 
                 <div class="row footer-details">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12 col-md-6">
                         <h5 class="uppercase general-sub">About</h5>
                         <p class="">
                             A game built on HTML5, use gravity and timing to manipulate the bouncing ball and past the obstacles.
@@ -60,7 +60,7 @@
                             Can you get a new highscore!?
                         </p>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12 col-md-6">
                         <h5 class="uppercase general-sub">Contact</h5>
                         <p class="inline-block">
                             Want to collaborate? Report a bug? contact me by clicking the button<span>
