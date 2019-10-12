@@ -180,9 +180,13 @@ function drawLose() {
     ctx.fillStyle = "#fff";
     ctx.font = "25px Righteous";
     
+    if(scoreLast <= highScore){
     ctx.fillText("You Lose!", canvas.width / 2 - 65, canvas.height / 2 - 100);
+    }else{
+        ctx.fillText("New High Score!", canvas.width / 2 - 95, canvas.height / 2 - 100);
+    }
     ctx.font = "20px Righteous";
-    ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 25);
+    ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 35);
     ctx.fillText(`High Score: ${highScore}`,canvas.width / 2 - 60, canvas.height / 2 - 0)
     ctx.fillText(`Click To Restart`,canvas.width / 2 - 75, canvas.height - 200)
 
