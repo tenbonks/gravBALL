@@ -23,6 +23,22 @@ canvas.addEventListener('mousedown', function (event) {
 
 }, false);
 
+canvas.addEventListener('touchstart', function (event) {
+    gameStarted = true;
+    if (paused === true && gameLost === false) {
+        togglePause();
+    }
+    
+    //on mousedown, gravity is set to 0
+    lastDownTarget = event.target;
+    gravity = 0;
+    canvas.addEventListener("touchend", function () {
+        //on mouse up, gravity is reverted back to 0.5
+        gravity = 0.5;
+    });
+
+}, false);
+
 //jQuery selection used to disable the context menu within the canvas
 $('body').on('contextmenu', '#canvas', function(e){ return false; });
 
