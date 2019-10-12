@@ -34,12 +34,6 @@ window.addEventListener('keydown', function (event) {
     }
 }, false);
 
-//this listener will start the game, when the page is loaded it is set to pause, click to set pause to false
-canvas.addEventListener('mousedown', function () {
-
-
-});
-
 window.onload = init;
 
 //Game variables
@@ -77,8 +71,7 @@ pillar[0] = {
     y: 0
 }
 
-console.log(gameStarted);
-
+//This variable is for the gameLoop function
 var oldTimeStamp = 0;
 
 //for loop, allows for new pillars to be pushed to
@@ -138,9 +131,7 @@ function gameLoop(timeStamp) {
         drawLose();
     }
 
-    console.log(gameStarted)
     // Keep requesting new frames
-
     window.requestAnimationFrame(gameLoop);
 
 }
@@ -187,12 +178,13 @@ function drawLose() {
     gameLost === true;
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "#fff";
-    ctx.font = "20px Righteous";
+    ctx.font = "25px Righteous";
     
-    ctx.fillText("You Lose!", canvas.width / 2 - 50, canvas.height / 2 - 50);
+    ctx.fillText("You Lose!", canvas.width / 2 - 65, canvas.height / 2 - 100);
+    ctx.font = "20px Righteous";
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 25);
     ctx.fillText(`High Score: ${highScore}`,canvas.width / 2 - 60, canvas.height / 2 - 0)
-    ctx.fillText(`Click To Restart`,canvas.width / 2 - 70, canvas.height - 20)
+    ctx.fillText(`Click To Restart`,canvas.width / 2 - 75, canvas.height - 200)
 
     
 }
@@ -206,8 +198,6 @@ function togglePause() {
     }
 
 }
-
-
 
 //Applies gravity to the playersY coordinate, also will bounce off the floor depending on momentum the ball hit
 function applyGravity() {
