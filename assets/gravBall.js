@@ -102,13 +102,13 @@ function detectCollision() {
     //detect collision, reload canvas if player hits obstacle
     if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillarX && (playerX - playerRadius) <= pillarX + pillarWidth && (playerY - playerRadius <= pillarY + pillarHeight || playerY + playerRadius >= pillarY + constant)) {
 
-        
+        //if the player collides, pauses the drawGame function and will run the drawLose function
         togglePause();
-        if (scoreLast >= highScore){
-            highScore = scoreLast;
-        }
+        //then set scoreLast to what was just scored, this is displayed in the drawLose function
         scoreLast = score;
+        //reset the score to 0, needs to be after the line of code above
         score = 0
+        //reset the pillars to end of canvas and the gap will be set at a random height
         pillarX = canvas.width
         pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
     }
@@ -118,6 +118,9 @@ function incrementScore() {
     //if the pillar has passed, increment the score
     if (pillarX == playerX - playerRadius - pillarWidth) {
         score++;
+    }
+    if (scoreLast >= highScore){
+        highScore = scoreLast;
     }
 }
 
