@@ -12,7 +12,7 @@ canvas.addEventListener('mousedown', function (event) {
     if (paused === true && gameLost === false) {
         togglePause();
     }
-    
+
     //on mousedown, gravity is set to 0
     lastDownTarget = event.target;
     gravity = 0;
@@ -28,23 +28,25 @@ canvas.addEventListener('touchstart', function (event) {
     if (paused === true && gameLost === false) {
         togglePause();
     }
-    
+
     //on mousedown, gravity is set to 0
     lastDownTarget = event.target;
     gravity = 0;
     canvas.addEventListener("touchend", function () {
-        //on mouse up, gravity is reverted back to 0.5
+        //on finger up, gravity is reverted back to 0.5
         gravity = 0.5;
     });
 
 }, false);
 
 //jQuery selection used to disable the context menu within the canvas
-$('body').on('contextmenu', '#canvas', function(e){ return false; });
+$('body').on('contextmenu', '#canvas', function (e) {
+    return false;
+});
 
 window.addEventListener('keydown', function (e) {
     //if the last target was canvas, allow key input, NOTE KEYCODE 32 is SPACEBAR 
-    if (lastDownTarget == canvas && e.keyCode == 32) { 
+    if (lastDownTarget == canvas && e.keyCode == 32) {
         //the line below disables default input to html document, this stops page scroll when spacebar is pressed
         e.preventDefault();
         //on keydown, gravity is set to 0
@@ -58,6 +60,13 @@ window.addEventListener('keydown', function (e) {
 
 window.onload = init;
 
+var canvasSquished;
+
+//Audio Variables
+var SCORE_BEEP = new Audio("assets\audio\score_beep.wav");
+
+
+
 //Game variables
 var paused = true;
 var gameStarted = false;
@@ -66,7 +75,6 @@ var score = 0;
 var scoreLast = 0;
 var highScore = 0;
 
-
 //Player Variables
 var playerX = 70;
 var playerY = 300;
@@ -74,7 +82,7 @@ var playerRadius = 30;
 
 //Gravity Variables
 var vy = (Math.random() * -10) - 5;
-var gravity = 0.5;
+var gravity = 0;
 var bounce_factor = 0.8;
 
 //Obstacle variables/function
@@ -134,8 +142,9 @@ function incrementScore() {
     //if the pillar has passed, increment the score
     if (pillarX == playerX - playerRadius - pillarWidth) {
         score++;
+        SCORE_BEEP.play();
     }
-    if (scoreLast >= parseInt(localStorage.getItem("highScore"))){
+    if (scoreLast >= parseInt(localStorage.getItem("highScore"))) {
         highScore = scoreLast;
         localStorage.setItem("highScore", scoreLast)
     }
@@ -185,9 +194,6 @@ function drawGame() {
     ctx.font = "20px Righteous";
     ctx.fillText("Score : " + score, canvas.width / 2 - 50, 25);
 
-    //draw highscore
-    ctx.fillStyle = "000";
-    ctx.font = ""
 }
 
 //When the page is loaded the canvas will display information to prompt the user to click the canvas
@@ -198,28 +204,30 @@ function drawStart() {
     ctx.fillText("Click to Start", canvas.width / 2 - 70, canvas.height / 2 - 10);
 }
 
+
+
 //If the ball collides this screen will appear, it is a losing splash screen
 function drawLose() {
-    
+
     gameLost === true;
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "#fff";
     ctx.font = "25px Righteous";
-    
+
     //line below is just to tidy up code below that uses localStorage
     localHighScore = parseInt(localStorage.getItem("highScore"));
 
-    if(scoreLast <= localHighScore){
-    ctx.fillText("You Lose!", canvas.width / 2 - 65, canvas.height / 2 - 100);
-    }else{
+    if (scoreLast <= localHighScore) {
+        ctx.fillText("You Lose!", canvas.width / 2 - 65, canvas.height / 2 - 100);
+    } else {
         ctx.fillText("New High Score!", canvas.width / 2 - 95, canvas.height / 2 - 100);
     }
     ctx.font = "20px Righteous";
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 35);
-    ctx.fillText(`High Score: ${localHighScore}`,canvas.width / 2 - 70, canvas.height / 2 - 0)
-    ctx.fillText(`Click To Restart`,canvas.width / 2 - 75, canvas.height - 200)
+    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 70, canvas.height / 2 - 0)
+    ctx.fillText(`Click To Restart`, canvas.width / 2 - 75, canvas.height - 200)
 
-    
+
 }
 
 //A pausing function, it is used in conjunction with the gameLoop to help implement the game states
@@ -245,7 +253,7 @@ function applyGravity() {
         //velocity needs to be reset otherwise it will stick to the floor
         vx = 0;
         vy *= -bounce_factor;
-    //if the player hits the top of canvas  
+        //if the player hits the top of canvas  
     } else if (playerY - playerRadius < 0) {
         playerX = playerX
         playerY = 0 + playerRadius;
@@ -253,7 +261,21 @@ function applyGravity() {
         vx = 0;
         vy *= -bounce_factor;
     }
-}
+};
+
+function isCanvasSquished() {
+    canvasSquished = $("#canvas").css("width")
+    setTimeout(function(){
+        if (canvasSquished < 800) {
+            console.log("well, I'm running")
+            ctx.font = "30px Righteous";
+            ctx.fillText(`turn device landscape`, canvas.width / 2 - 50, canvas.height - 35);
+        }
+    } ,100)
+};
+
+
+
 
 //HELPER FUNCTIONS AT BOTTOM OF SCRIPT
 //Helper function to draw a CIRCLE
@@ -262,10 +284,9 @@ function colorCircle(centerX, centerY, radius, drawColor) {
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
     ctx.fill();
-}
+};
 //Helper function to draw a RECTANGLE 
 function colorRect(leftX, topY, width, height, drawColor) {
     ctx.fillStyle = drawColor;
     ctx.fillRect(leftX, topY, width, height);
-}
-
+};
