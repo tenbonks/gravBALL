@@ -74,6 +74,7 @@ var gameLost = false;
 var score = 0;
 var scoreLast = 0;
 var highScore = 0;
+localStorage.setItem("highScore", 0)
 
 //Player Variables
 var playerX = 70;
