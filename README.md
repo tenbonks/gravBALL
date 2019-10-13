@@ -1,11 +1,11 @@
 # gravBALL-game-component
 
 Howdy, here is a game which involves as good amount of reaction speed, mixed with timing.
-The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN LEFT CLICK, or ANY KEY (click the canvas if it's not registering input via KEY)
+The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN LEFT or RIGHT MOUSE BUTTON, or SPACEBAR (click the canvas if it's not registering input via KEY)
 
 **How far will you be able to get?**
 
-###play the game here... https://tenbonks.github.io/gravBALL-game-component/
+###play the game here...
 
 ---
 
