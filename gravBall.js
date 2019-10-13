@@ -11,6 +11,7 @@ canvas.addEventListener('mousedown', function (event) {
     gameStarted = true;
     if (paused === true && gameLost === false) {
         togglePause();
+        GAME_START.play();
     }
 
     //on mousedown, gravity is set to 0
@@ -27,6 +28,7 @@ canvas.addEventListener('touchstart', function (event) {
     gameStarted = true;
     if (paused === true && gameLost === false) {
         togglePause();
+        GAME_START.play();
     }
 
     //on mousedown, gravity is set to 0
@@ -60,10 +62,11 @@ window.addEventListener('keydown', function (e) {
 
 window.onload = init;
 
-var canvasSquished;
-
 //Audio Variables
-var SCORE_BEEP = new Audio("./assets/audio/score_beep.wav");
+const SCORE_BEEP = new Audio("./assets/audio/score_beep.wav");
+const COLLIDE_BEEP = new Audio ("./assets/audio/lose.wav");
+const GAME_START = new Audio ("./assets/audio/start.wav")
+const BALL_BOUNCE = new Audio ("./assets/audio/ball-bounce.wav")
 
 
 
@@ -130,13 +133,15 @@ function movePillars() {
 function detectCollision() {
     //detect collision, reload canvas if player hits obstacle
     if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillarX && (playerX - playerRadius) <= pillarX + pillarWidth && (playerY - playerRadius <= pillarY + pillarHeight || playerY + playerRadius >= pillarY + constant)) {
-
+        COLLIDE_BEEP.play();
+        
         //if the player collides, pauses the drawGame function and will run the drawLose function
         togglePause();
         
         //then set scoreLast to what was just scored, this is displayed in the drawLose function
         scoreLast = score;
         checkHighScore();
+        
         //reset the score to 0, needs to be after the line of code above
         score = 0
         //reset the pillars to end of canvas and the gap will be set at a random height
@@ -255,7 +260,7 @@ function applyGravity() {
         //player Y cant exceed the canvas height - playerRadius, this stops it from going off screen
         playerX = playerX
         playerY = canvas.height - playerRadius
-
+        BALL_BOUNCE.play();
         //velocity needs to be reset otherwise it will stick to the floor
         vx = 0;
         vy *= -bounce_factor;
@@ -263,6 +268,7 @@ function applyGravity() {
     } else if (playerY - playerRadius < 0) {
         playerX = playerX
         playerY = 0 + playerRadius;
+        BALL_BOUNCE.play();
         //the same as the code above, this time player Y cant exceed the top, and will bounce from the top
         vx = 0;
         vy *= -bounce_factor;
