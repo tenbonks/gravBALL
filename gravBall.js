@@ -170,6 +170,9 @@ function gameLoop(timeStamp) {
     //calculate the time passed
     var secondsPassed = (timeStamp - oldTimeStamp) / 1000;
     oldTimeStamp = timeStamp
+    //this always check the high score in localStorage
+    localHighScore = parseInt(localStorage.getItem("highScore"));
+
 
     if (!paused) {
         update(secondsPassed);
@@ -211,7 +214,7 @@ function drawGame() {
 
 }
 
-localHighScore = parseInt(localStorage.getItem("highScore"));
+
 
 //When the page is loaded the canvas will display information to prompt the user to click the canvas
 function drawStart() {
@@ -226,8 +229,8 @@ function drawStart() {
 
 //If the ball collides this screen will appear, it is a losing splash screen
 function drawLose() {
-
     gameLost === true;
+    
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "#fff";
     ctx.font = "30px Righteous";
