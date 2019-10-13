@@ -39,14 +39,16 @@ h1 {
 #logo {
     padding: 5px 0px;
     width: 100%;
+    background: rgb(0,0,0);
     background-color: rgba(0, 0, 0, 0.8);
-}
+    }
 
 .footer {
     display: inline-block;
     margin: 0 auto;
     padding: 15px;
     width: 100%;
+    background: rgb(0,0,0);
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
 }
