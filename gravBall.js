@@ -77,6 +77,8 @@ var gameLost = false;
 var score = 0;
 var scoreLast = 0;
 var highScore = 0;
+
+//Set highScore to 0 in localstorage IF there isn't any currently
 if(localStorage.getItem("highScore") === null) {
     localStorage.setItem("highScore", highScore)
 }
@@ -96,7 +98,10 @@ var bounce_factor = 0.8;
 //Obstacle variables/function
 var pillarHeight = 452;
 var pillarWidth = 50;
-var gap = 150;
+
+var gap = 170;
+
+
 var constant = pillarHeight + gap
 var pillarSpeed = 5;
 var pillarX;
@@ -124,6 +129,7 @@ function movePillars() {
     //IF the pillar is nearly off the canvas
     if (pillarX == (0 - pillarWidth)) {
 
+        
         pillarX = canvas.width;
         pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
 
