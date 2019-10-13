@@ -63,7 +63,7 @@ window.onload = init;
 var canvasSquished;
 
 //Audio Variables
-var SCORE_BEEP = new Audio("../assets/audio/score_beep.wav");
+var SCORE_BEEP = new Audio("./assets/audio/score_beep.wav");
 
 
 
@@ -233,8 +233,6 @@ function drawLose() {
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 40, canvas.height / 2 - 35);
     ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 60, canvas.height / 2 - 0)
     ctx.fillText(`Click To Restart`, canvas.width / 2 - 75, canvas.height - 200)
-
-    console.log(localStorage.getItem("highScore"))
 
 }
 
