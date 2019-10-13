@@ -63,7 +63,7 @@ window.onload = init;
 var canvasSquished;
 
 //Audio Variables
-var SCORE_BEEP = new Audio("assets\audio\score_beep.wav");
+var SCORE_BEEP = new Audio("./assets/audio/score_beep.wav");
 
 
 
