@@ -63,7 +63,7 @@ window.onload = init;
 var canvasSquished;
 
 //Audio Variables
-var SCORE_BEEP = new Audio("audio\score_beep.wav");
+var SCORE_BEEP = new Audio("assets\audio\score_beep.wav");
 
 
 
@@ -273,21 +273,6 @@ function applyGravity() {
         vy *= -bounce_factor;
     }
 };
-
-//this needs to be worked ---------------------------------------------------------------------------------------------------------------------- !?-ATTENTION-?!
-function isCanvasSquished() {
-    canvasSquished = $("#canvas").css("width")
-    setTimeout(function(){
-        if (canvasSquished < 800) {
-            console.log("well, I'm running")
-            ctx.font = "30px Righteous";
-            ctx.fillText(`turn device landscape`, canvas.width / 2 - 50, canvas.height - 35);
-        }
-    } ,100)
-};
-
-
-
 
 //HELPER FUNCTIONS AT BOTTOM OF SCRIPT
 //Helper function to draw a CIRCLE
