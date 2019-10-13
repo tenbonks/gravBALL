@@ -5,8 +5,8 @@
 
 body {
     background-color: #346960;
-    background-image: url("assets/images/skulls.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-image: url("../assets/images/skulls.png");
+    
    padding: 0;
     
 }
@@ -54,7 +54,7 @@ h1 {
     font-family: "Righteous", cursive;
     color: white;
     background-color: #040f12;
-    background-image: url("./assets/images/subtle-white-feathers.png");
+    background-image: url("../assets/images/subtle-white-feathers.png");
     
 }
 
