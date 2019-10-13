@@ -74,7 +74,10 @@ var gameLost = false;
 var score = 0;
 var scoreLast = 0;
 var highScore = 0;
-localStorage.setItem("highScore", highScore)
+if(localStorage.getItem("highScore") === null) {
+    localStorage.setItem("highScore", highScore)
+}
+
 
 
 //Player Variables
@@ -219,19 +222,19 @@ function drawLose() {
     gameLost === true;
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "#fff";
-    ctx.font = "25px Righteous";
+    ctx.font = "30px Righteous";
 
     //line below is just to tidy up code below that uses localStorage
     localHighScore = parseInt(localStorage.getItem("highScore"));
-
+    ///unsaved code here HAVE A LOOK ------------------------------------------------------------------------------------!!ATTENTION!!
     if (scoreLast <= localHighScore) {
-        ctx.fillText("You Lose!", canvas.width / 2 - 65, canvas.height / 2 - 100);
+        ctx.fillText("Oops!", canvas.width / 2 - 40, canvas.height / 2 - 75);
     } else {
-        ctx.fillText("New High Score!", canvas.width / 2 - 95, canvas.height / 2 - 100);
+        ctx.fillText("Win!", canvas.width / 2 - 40, canvas.height / 2 - 75);
     }
     ctx.font = "20px Righteous";
-    ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 50, canvas.height / 2 - 35);
-    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 70, canvas.height / 2 - 0)
+    ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 40, canvas.height / 2 - 35);
+    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 60, canvas.height / 2 - 0)
     ctx.fillText(`Click To Restart`, canvas.width / 2 - 75, canvas.height - 200)
 
     console.log(localStorage.getItem("highScore"))
