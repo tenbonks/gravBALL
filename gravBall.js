@@ -206,12 +206,15 @@ function drawGame() {
 
 }
 
+localHighScore = parseInt(localStorage.getItem("highScore"));
+
 //When the page is loaded the canvas will display information to prompt the user to click the canvas
 function drawStart() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "#fff";
     ctx.font = "20px Righteous";
     ctx.fillText("Click to Start", canvas.width / 2 - 70, canvas.height / 2 - 10);
+    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 66, canvas.height / 2 + 20)
 }
 
 
@@ -223,15 +226,9 @@ function drawLose() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "#fff";
     ctx.font = "30px Righteous";
-
-    //line below is just to tidy up code below that uses localStorage
-    localHighScore = parseInt(localStorage.getItem("highScore"));
-    ///unsaved code here HAVE A LOOK ------------------------------------------------------------------------------------!!ATTENTION!!
-    if (scoreLast <= localHighScore) {
-        ctx.fillText("Oops!", canvas.width / 2 - 40, canvas.height / 2 - 75);
-    } else {
-        ctx.fillText("Win!", canvas.width / 2 - 40, canvas.height / 2 - 75);
-    }
+    
+    ctx.fillText("Oops!", canvas.width / 2 - 40, canvas.height / 2 - 75);
+    
     ctx.font = "20px Righteous";
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 40, canvas.height / 2 - 35);
     ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 60, canvas.height / 2 - 0)
