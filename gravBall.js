@@ -9,11 +9,13 @@ function init() {
 //important that this code is listening for event in canvas element, as it sets the target for key input to register
 canvas.addEventListener('mousedown', function (event) {
     gameStarted = true;
+    if (paused === true && muted === false) {
+        GAME_START.play();        
+    }
     if (paused === true && gameLost === false) {
         togglePause();
-        GAME_START.play();
     }
-
+    
     //on mousedown, gravity is set to 0
     lastDownTarget = event.target;
     gravity = 0;
@@ -28,7 +30,9 @@ canvas.addEventListener('touchstart', function (event) {
     gameStarted = true;
     if (paused === true && gameLost === false) {
         togglePause();
+        
         GAME_START.play();
+        
     }
 
     //on mousedown, gravity is set to 0
@@ -60,18 +64,26 @@ window.addEventListener('keydown', function (e) {
     }
 }, false);
 
+$("#top-dash").on("click", function(){
+    toggleMute();
+    console.log(muted);
+});
+
 window.onload = init;
 
 //Audio Variables
-const SCORE_BEEP = new Audio("./assets/audio/score_beep.wav");
-const COLLIDE_BEEP = new Audio ("./assets/audio/lose.wav");
-const GAME_START = new Audio ("./assets/audio/start.wav")
-const BALL_BOUNCE = new Audio ("./assets/audio/ball-bounce.wav")
+
+var SCORE_BEEP = new Audio("./assets/audio/score_beep.wav");
+var COLLIDE_BEEP = new Audio ("./assets/audio/lose.wav");
+var GAME_START = new Audio ("./assets/audio/start.wav")
+var BALL_BOUNCE = new Audio ("./assets/audio/ball-bounce.wav")
+
 
 
 
 //Game variables
 var paused = true;
+var muted = false;
 var gameStarted = false;
 var gameLost = false;
 var score = 0;
@@ -139,8 +151,10 @@ function movePillars() {
 function detectCollision() {
     //detect collision, reload canvas if player hits obstacle
     if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillarX && (playerX - playerRadius) <= pillarX + pillarWidth && (playerY - playerRadius <= pillarY + pillarHeight || playerY + playerRadius >= pillarY + constant)) {
-        COLLIDE_BEEP.play();
         
+        if(muted === false){
+        COLLIDE_BEEP.play();
+        }
         //if the player collides, pauses the drawGame function and will run the drawLose function
         togglePause();
         
@@ -160,6 +174,7 @@ function incrementScore() {
     //if the pillar has passed, increment the score
     if (pillarX == playerX - playerRadius - pillarWidth) {
         score++;
+        if(muted === false)
         SCORE_BEEP.play();
     }
 }
@@ -261,17 +276,29 @@ function togglePause() {
     }
 }
 
+function toggleMute() {
+    if(!muted){
+        muted = true;
+    } else if (muted){
+        muted = false;
+    }
+}
+
 //Applies gravity to the playersY coordinate, also will bounce off the floor depending on momentum the ball hit
 function applyGravity() {
     playerY += vy;
     vy += gravity;
-
+    
     //if the player hits the bottom of the canvas
     if (playerY + playerRadius > canvas.height) {
         //player Y cant exceed the canvas height - playerRadius, this stops it from going off screen
         playerX = playerX
         playerY = canvas.height - playerRadius
+        
+        if(muted === false) {
         BALL_BOUNCE.play();
+        }
+        
         //velocity needs to be reset otherwise it will stick to the floor
         vx = 0;
         vy *= -bounce_factor;
@@ -279,7 +306,11 @@ function applyGravity() {
     } else if (playerY - playerRadius < 0) {
         playerX = playerX
         playerY = 0 + playerRadius;
+        
+        if(muted === false) {
         BALL_BOUNCE.play();
+        }        
+        
         //the same as the code above, this time player Y cant exceed the top, and will bounce from the top
         vx = 0;
         vy *= -bounce_factor;
