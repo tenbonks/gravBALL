@@ -18,6 +18,43 @@ body {
 
 }
 
+#top-dash {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 200px;
+    background: rgba(0,0,0,0.8) ;
+    border: 2px solid white;
+    border-bottom: 0px;
+    border-radius:100px 100px 0 0 ;
+    transition-duration: 100ms;
+    -moz-transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+
+}
+
+#top-dash > h3 {
+    color: white;
+    font-family: "Righteous", cursive;
+    margin: 0 auto;
+    padding: 5px 0 5px 0;
+
+}
+
+#top-dash:hover {
+    width: 150px;
+    border-radius: 200px 200px 0 0;
+    background: rgba(53, 52, 52, 0.8) ;
+    transition-duration: 100ms;
+    -moz-transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    
+    
+}
+
+
 #canvas {
     max-height: 600px;
     max-width: 800px;
