@@ -66,6 +66,7 @@ body {
     background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgb(28, 79, 88) 100%);
     border: 2px solid white;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 
