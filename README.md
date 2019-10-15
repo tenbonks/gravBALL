@@ -44,6 +44,8 @@ PaulMorek via freesound | beep when score increments | source - https://freesoun
 suntemple via freesound | game lose noise | https://freesound.org/people/suntemple/sounds/253174/
 leviclaassen via freesound | noise on game start | https://freesound.org/people/leviclaassen/sounds/107786/
 michorvath via freesound | plays on ball bounce | https://freesound.org/people/michorvath/sounds/269718/
+Textured Backgrounds via https://www.transparenttextures.com/
+
 **Acknowledgements**
 Chris Deleon for basics in canvas game making, via tennis udemy course
 Code Explained (Youtube Channel) for inspiration on implementing the pillars, via flappy bird tutorial

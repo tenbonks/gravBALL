@@ -78,9 +78,6 @@ var COLLIDE_BEEP = new Audio ("./assets/audio/lose.wav");
 var GAME_START = new Audio ("./assets/audio/start.wav")
 var BALL_BOUNCE = new Audio ("./assets/audio/ball-bounce.wav")
 
-
-
-
 //Game variables
 var paused = true;
 var muted = false;
@@ -93,9 +90,7 @@ var highScore = 0;
 //Set highScore to 0 in localstorage IF there isn't any currently
 if(localStorage.getItem("highScore") === null) {
     localStorage.setItem("highScore", highScore)
-}
-
-
+};
 
 //Player Variables
 var playerX = 70;
@@ -110,10 +105,7 @@ var bounce_factor = 0.8;
 //Obstacle variables/function
 var pillarHeight = 452;
 var pillarWidth = 50;
-
-var gap = 170;
-
-
+var gap = 220;
 var constant = pillarHeight + gap
 var pillarSpeed = 5;
 var pillarX;
@@ -141,7 +133,7 @@ function movePillars() {
     //IF the pillar is nearly off the canvas
     if (pillarX == (0 - pillarWidth)) {
 
-        
+        gap --
         pillarX = canvas.width;
         pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
 
