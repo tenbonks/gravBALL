@@ -74,8 +74,8 @@ window.onload = init;
 
 var SCORE_BEEP = new Audio("./assets/audio/score_beep.wav");
 var COLLIDE_BEEP = new Audio ("./assets/audio/lose.wav");
-var GAME_START = new Audio ("./assets/audio/start.wav")
-var BALL_BOUNCE = new Audio ("./assets/audio/ball-bounce.wav")
+var GAME_START = new Audio ("./assets/audio/start.wav");
+var BALL_BOUNCE = new Audio ("./assets/audio/ball-bounce.wav");
 
 //Game variables
 var paused = true;
@@ -88,8 +88,8 @@ var highScore = 0;
 
 //Set highScore to 0 in localstorage IF there isn't any currently
 if(localStorage.getItem("highScore") === null) {
-    localStorage.setItem("highScore", highScore)
-};
+    localStorage.setItem("highScore", highScore);
+}
 
 //Player Variables
 var playerX = 70;
@@ -105,7 +105,7 @@ var bounce_factor = 0.8;
 var pillarHeight = 452;
 var pillarWidth = 50;
 var gap = 220;
-var constant = pillarHeight + gap
+var constant = pillarHeight + gap;
 var pillarSpeed = 5;
 var pillarX;
 var pillarY;
@@ -115,15 +115,15 @@ var pillar = [];
 pillar[0] = {
     x: canvas.width,
     y: -250
-}
+};
 
 //This variable is for the gameLoop function
 var oldTimeStamp = 0;
 
 //for loop, allows for new pillars to be pushed to
 for (var i = 0; i < pillar.length; i++) {
-    pillarX = pillar[i].x
-    pillarY = pillar[i].y
+    pillarX = pillar[i].x;
+    pillarY = pillar[i].y;
 }
 
 function movePillars() {
@@ -132,9 +132,9 @@ function movePillars() {
     //IF the pillar is nearly off the canvas
     if (pillarX == (0 - pillarWidth)) {
 
-        gap --
+        gap --;
         pillarX = canvas.width;
-        pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
+        pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight;
 
     }
 }
@@ -154,10 +154,10 @@ function detectCollision() {
         checkHighScore();
         
         //reset the score to 0, needs to be after the line of code above
-        score = 0
+        score = 0;
         //reset the pillars to end of canvas and the gap will be set at a random height
-        pillarX = canvas.width
-        pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight
+        pillarX = canvas.width;
+        pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight;
     }
 }
 
@@ -173,7 +173,7 @@ function incrementScore() {
 function checkHighScore() {
     if (scoreLast >= parseInt(localStorage.getItem("highScore"))) {
         highScore = scoreLast;
-        localStorage.setItem("highScore", scoreLast)
+        localStorage.setItem("highScore", scoreLast);
     }
 }
 
@@ -181,7 +181,7 @@ function checkHighScore() {
 function gameLoop(timeStamp) {
     //calculate the time passed
     var secondsPassed = (timeStamp - oldTimeStamp) / 1000;
-    oldTimeStamp = timeStamp
+    oldTimeStamp = timeStamp;
     //this always check the high score in localStorage
     localHighScore = parseInt(localStorage.getItem("highScore"));
 
@@ -211,14 +211,14 @@ function update() {
 function drawGame() {
     
     //clear screen before every frame
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     //draw the ball
-    colorCircle(playerX, playerY, playerRadius, "white")
+    colorCircle(playerX, playerY, playerRadius, "white");
 
     //draw the pillars
-    colorRect(pillarX, pillarY, pillarWidth, pillarHeight, "white")
-    colorRect(pillarX, pillarY + constant, pillarWidth, pillarHeight, "white")
+    colorRect(pillarX, pillarY, pillarWidth, pillarHeight, "white");
+    colorRect(pillarX, pillarY + constant, pillarWidth, pillarHeight, "white");
 
     //draw the score
     ctx.fillStyle = "#fff";
@@ -231,12 +231,12 @@ function drawGame() {
 
 //When the page is loaded the canvas will display information to prompt the user to click the canvas
 function drawStart() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#fff";
     ctx.font = "20px Righteous";
     ctx.fillText("Click to Start", canvas.width / 2 - 60, canvas.height / 2 - 10);
-    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 65, canvas.height / 2 + 20)
-    ctx.fillText(`View Controls Below`, canvas.width / 2 - 90, canvas.height - 20)
+    ctx.fillText("High Score: " + localHighScore, canvas.width / 2 - 65, canvas.height / 2 + 20);
+    ctx.fillText("View Controls Below", canvas.width / 2 - 90, canvas.height - 20);
 
     isItMute();
     
@@ -248,7 +248,7 @@ function drawStart() {
 function drawLose() {
     gameLost === true;
     
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#fff";
     ctx.font = "30px Righteous";
     
@@ -256,8 +256,8 @@ function drawLose() {
     
     ctx.font = "20px Righteous";
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 40, canvas.height / 2 - 35);
-    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 65, canvas.height / 2 - 0)
-    ctx.fillText(`Click To Restart`, canvas.width / 2 - 75, canvas.height - 200)
+    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 65, canvas.height / 2 - 0);
+    ctx.fillText(`Click To Restart`, canvas.width / 2 - 75, canvas.height - 200);
 
     isItMute();
 
@@ -280,11 +280,12 @@ function toggleMute() {
     }
 }
 
+//This will display to the user on the start and lose screen if sound is on or off
 function isItMute () {
     if(muted === false) {
-        ctx.fillText(`Sound On`, canvas.width / 2 - 45, 0 + 25)  
+        ctx.fillText("Sound On", canvas.width / 2 - 45, 0 + 25); 
     } else {
-        ctx.fillText(`Sound Off`, canvas.width / 2 - 45, 0 + 25)  
+        ctx.fillText("Sound Off", canvas.width / 2 - 45, 0 + 25);  
     }
 }
 
@@ -296,8 +297,8 @@ function applyGravity() {
     //if the player hits the bottom of the canvas
     if (playerY + playerRadius > canvas.height) {
         //player Y cant exceed the canvas height - playerRadius, this stops it from going off screen
-        playerX = playerX
-        playerY = canvas.height - playerRadius
+        playerX = playerX;
+        playerY = canvas.height - playerRadius;
         
         if(muted === false) {
         BALL_BOUNCE.play();
@@ -308,7 +309,7 @@ function applyGravity() {
         vy *= -bounce_factor;
         //if the player hits the top of canvas  
     } else if (playerY - playerRadius < 0) {
-        playerX = playerX
+        playerX = playerX;
         playerY = 0 + playerRadius;
         
         if(muted === false) {
@@ -319,7 +320,7 @@ function applyGravity() {
         vx = 0;
         vy *= -bounce_factor;
     }
-};
+}
 
 //HELPER FUNCTIONS AT BOTTOM OF SCRIPT
 //Helper function to draw a CIRCLE
@@ -328,9 +329,9 @@ function colorCircle(centerX, centerY, radius, drawColor) {
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
     ctx.fill();
-};
+}
 //Helper function to draw a RECTANGLE 
 function colorRect(leftX, topY, width, height, drawColor) {
     ctx.fillStyle = drawColor;
     ctx.fillRect(leftX, topY, width, height);
-};
+}
