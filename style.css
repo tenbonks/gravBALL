@@ -22,7 +22,7 @@ body {
     display: block;
     margin: 0 auto;
     height: 50px;
-    width: 200px;
+    width: 150px;
     background-color: rgba(0,0,0,0.8) ;
     border: 2px solid white;
     border-bottom: 0px;
@@ -44,7 +44,7 @@ body {
 }
 
 #top-dash:hover {
-    width: 150px;
+    width: 200px;
     border-radius: 200px 200px 0 0;
     background-color: rgba(53, 52, 52, 0.8) ;
     transition-duration: 100ms;
