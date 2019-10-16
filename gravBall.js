@@ -66,7 +66,6 @@ window.addEventListener('keydown', function (e) {
 
 $("#top-dash").on("click", function(){
     toggleMute();
-    console.log(muted);
 });
 
 window.onload = init;
@@ -210,6 +209,7 @@ function update() {
 }
 
 function drawGame() {
+    
     //clear screen before every frame
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -235,8 +235,10 @@ function drawStart() {
     ctx.fillStyle = "#fff";
     ctx.font = "20px Righteous";
     ctx.fillText("Click to Start", canvas.width / 2 - 60, canvas.height / 2 - 10);
-    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 56, canvas.height / 2 + 20)
+    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 65, canvas.height / 2 + 20)
     ctx.fillText(`View Controls Below`, canvas.width / 2 - 90, canvas.height - 20)
+
+    isItMute();
     
 }
 
@@ -254,8 +256,10 @@ function drawLose() {
     
     ctx.font = "20px Righteous";
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 40, canvas.height / 2 - 35);
-    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 60, canvas.height / 2 - 0)
+    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 45, canvas.height / 2 - 0)
     ctx.fillText(`Click To Restart`, canvas.width / 2 - 75, canvas.height - 200)
+
+    isItMute();
 
 }
 
@@ -273,6 +277,14 @@ function toggleMute() {
         muted = true;
     } else if (muted){
         muted = false;
+    }
+}
+
+function isItMute () {
+    if(muted === false) {
+        ctx.fillText(`Sound On`, canvas.width / 2 - 45, 0 + 25)  
+    } else {
+        ctx.fillText(`Sound Off`, canvas.width / 2 - 45, 0 + 25)  
     }
 }
 
