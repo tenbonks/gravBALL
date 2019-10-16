@@ -256,7 +256,7 @@ function drawLose() {
     
     ctx.font = "20px Righteous";
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 40, canvas.height / 2 - 35);
-    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 60, canvas.height / 2 - 0)
+    ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 45, canvas.height / 2 - 0)
     ctx.fillText(`Click To Restart`, canvas.width / 2 - 75, canvas.height - 200)
 
     isItMute();
