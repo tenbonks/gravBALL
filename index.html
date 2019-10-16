@@ -13,15 +13,16 @@
     <link href="assets\fonts\timeburnerbold.ttf">
     <link href="https://fonts.googleapis.com/css?family=Turret+Road:400,500,700,800|Monoton|Righteous&display=swap"
         rel="stylesheet">
-        
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!--Article wraps all elements in the body-->
     <article class="main container-fluid no-gutters">
-        <!--LOGO-->
-
+        
+        <!--Logo-->
         <section class="logo">
             <div class="row no-gutters">
                 <div id="logo" class="col-12 mb-5 text-center">
@@ -29,8 +30,9 @@
                 </div>
             </div>
         </section>
-        <!--GAME-->
+        <!--/Logo-->
 
+        <!--The game canvas-->
         <section class="game">
             <div class="row no-gutters">
                 <div class="container game-container text-center d-none d-sm-block col-12 mb-5">
@@ -40,21 +42,27 @@
                     <canvas id="canvas" width="800" height="600"></canvas>
                 </div>
             </div>
+            <!--/The game canvas-->
+
+            <!--How to play/Screen too small alert-->
             <div class="container controls-container text-center">
                 <div class="opaque-info-box p-2 mb-5">
+                    <!--show on all screens except for small-->
                     <div class="controls d-none d-sm-block">
                         <h3 class="mb-3">How To Play</h3>
-                        <p>You are the bouncing ball, while HOLDING down L/R mouse buttons or SPACEBAR, gravity will have no effect
+                        <p>You are the bouncing ball, while HOLDING down L/R mouse buttons or SPACEBAR, gravity will
+                            have no effect
                             on the ball and you will be able to control how the ball falls or rises</p>
                         <p>Get past the obstacles, and hit a high score!</p>
                     </div>
-                    <!--Add a container here which will show only on small devices alerting them that it will not work-->
+                    <!--show only on small devices alerting the user that the screen is to small-->
                     <div class="small-screen-info d-block d-sm-none">
                         <h3 class="mb-3">Sorry!</h3>
                         <p>This devices screen is just too small to fit all the fun on.</p>
                         <p>Try viewing in landscape orientation.</p>
                     </div>
                 </div>
+                <!--/How to play/Screen too small alert-->
 
         </section>
 
@@ -68,13 +76,13 @@
                         <h5 class="uppercase general-sub">About</h5>
                         <p class="">
                             A game built on HTML5, use gravity and timing to manipulate the bouncing ball and pass the
-                            obstacles.                            
+                            obstacles.
                         </p>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <h5 class="uppercase general-sub">Contact</h5>
                         <p class="inline-block">
-                            Want to collaborate? Report a bug? contact me by clicking the button<span>
+                            Want to collaborate? Report a bug? Contact me by clicking the button<span>
                                 <button type="button" class="btn btn-primary btn-sm ml-2" data-toggle="modal"
                                     data-target="#contactModal">
                                     Contact Me
@@ -84,48 +92,55 @@
 
             </footer>
 
-            <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="contact">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                     <h5 class="modal-title" id="contactModalLabel">Contact Me!</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <label for="InputEmail">Email</label>
-                            <input label="email" type="email" class="form-control" id="Inputemail" aria-describedby="emailHelp" placeholder="Enter email" required>
-                            <small id="emailHelp" class="form-text text-muted">This will never be shared with anyone else.</small>
-                          </div>
-                            <div class="form-group">
-                              <label for="Inputname">Name</label>
-                              <textarea rows="1" label="name" type="text" name="name" class="form-control" id="Inputname" placeholder="Name" required></textarea>
-                            </div>
-                              <div class="form-group">
-                                <label for="Inputmessage">Message</label>
-                                  <br>
-                                <textarea rows="5" id="subject" name="subject" class="form-control" placeholder="Type your message here" required></textarea>
-                              </div>
-                            </div>
-                              <div class="modal-footer">
-                              <button type="button" id="Email" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Send</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
         </section>
         <!--/.Footer -->
 
+        <!--Modal, this will be hidden until "Contact me" button is pressed-->
+        <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="contact">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalLabel">Contact Me!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="InputEmail">Email</label>
+                                <input label="email" type="email" class="form-control" id="Inputemail"
+                                    aria-describedby="emailHelp" placeholder="Enter email" required>
+                                <small id="emailHelp" class="form-text text-muted">This will never be shared with
+                                    anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="Inputname">Name</label>
+                                <textarea rows="1" label="name" type="text" name="name" class="form-control"
+                                    id="Inputname" placeholder="Name" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Inputmessage">Message</label>
+                                <br>
+                                <textarea rows="5" id="subject" name="subject" class="form-control"
+                                    placeholder="Type your message here" required></textarea>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="Email" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--/Modal-->
+    
     </article>
 
-    <!-------------------------------------------------------------------------------------------------------------------LOAD SCRIPTS-->
+    <!-------------------------------------------------------------------------------------------------------------------LOAD SCRIPTS, after html to make sure html is loaded first-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
