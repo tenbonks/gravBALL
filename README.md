@@ -5,7 +5,7 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 **How far will you be able to get?**
 
-###play the game here...  https://tenbonks.github.io/gravBALL/
+**play the game here...** https://tenbonks.github.io/gravBALL/
 
 ---
 
@@ -18,23 +18,25 @@ The website consits of simply the title, the game, a information box displaying 
 I gave the user the option to conatact me with the pretense of wanting to report a bug, or contact me for potential collaboration, this is in the footer, and if they wish to proceed, they are prompted to click "Contact Me" button, on doing this a modal will appear at the forefront of the DOM. with the fields required layed out in a clean and appealing fashion.
 
 As a Gamer, I want to play this game, so I can get a highscore.
+
 As a Developer, I want reach out to a fellow developer, so we can collaborate.
 
-Wireframe/Mockup can be found in the files of this repository, under the folder "Wireframe/Mockup".
+**Wireframe/Mockup can be found in the files of this repository, under the folder "Wireframe/Mockup".**
+
 ---
 
 #Features
 
-1.An intuitive, yet simple control mechanism
-..1 Simply Hold Down either MOUSE BUTTON, or SPACEBAR to control the ball's gravity, this means you can control how it falls or rises. (Touch control also works)
-2.A score tracker
-..2 So you can feel the intensity when you're about to beat the high-score
-3.A locally set High score, in the user's browser
-..2 So the highscore won't be reset if the user closes the game
-4.A mute button
-..4 To enable the user to play the game without game sounds. information is displayed to the user if sound is on or off.
-5.A option to "Contact Me"
-..5 For if the user wants to colloborate, or maybe report a bug if found.
+1.An intuitive, yet simple control mechanism - Simply Hold Down either MOUSE BUTTON, or SPACEBAR to control the ball's gravity, this means you can control how it falls or rises. (Touch control also works)
+
+2.A score tracker - So you can feel the intensity when you're about to beat the high-score
+
+3.A locally set High score, in the user's browser - So the highscore won't be reset if the user closes the game
+
+4.A mute button - To enable the user to play the game without game sounds. information is displayed to the user if sound is on or off.
+
+5.A option to "Contact Me" - For if the user wants to colloborate, or maybe report a bug if found.
+
 
 
 
