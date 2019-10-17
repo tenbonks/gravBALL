@@ -55,21 +55,59 @@ HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework.
 
 This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Style Sheets) and JS (JavaScript), all of these play attributes in the actual game. For the actual website I used the Bootstrap 4 framework for positioning of elements, along with css to style the page, I used transparent textures in the css to give the site some character.
 
-1. HTML
-⋅⋅* Used in the structuring of the index.html file, also plays a role in coordinates of drawn shapes in the canvas
-2. CSS
-⋅⋅* Is used for the styling of the site, it also draws the background to the canvas game. . 
-3. Javascript
-⋅⋅* All of the game mechanics are written in Javascript, in fact everything is Javascript within the canvas other than the background, which is css
-4. Bootstrap 4 
-⋅⋅* Used to position elements in the DOM, how I implemented the "Contact Modal", also how I display "Device is too small" message if the screen is under the "sm" breakpoint.
-5. Jquery
-⋅⋅* I used jQuery to access some of the dom elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
+1. HTML - Used in the structuring of the index.html file, also plays a role in coordinates of drawn shapes in the canvas
+
+2. CSS - Is used for the styling of the site, it also draws the background to the canvas game.
+
+3. Javascript -  All of the game mechanics are written in Javascript, in fact everything is Javascript within the canvas other than the background, which is css
+
+4. Bootstrap 4 - Used to position elements in the DOM, how I implemented the "Contact Modal", also how I display "Device is too small" message if the screen is under the "sm" breakpoint.
+
+5. Jquery - I used jQuery to access some of the DOM elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
+
+
 
 --- 
 # Testing
 
+I planned on using the Jasmine Framework for testing the game, but it is mainly DOM manipulation and requires certain conditions to be met while the game is running, so manual testing seemed to be the best option for me to test *"gravBALL"*
 
+1. gravBall on page load, should display a start screen, if clicked should start to draw the game elements:
+    1. Load the website
+    2. Check the canvas element to see if the expected function is running (drawStart)
+    3. Click the canvas to see if the gamestate changes as expected (drawGame) is now running
+    4. The boot process of the game is working as expected
+
+2. does gravBALL change to "Oops!" (drawLose) screen if collision is detected:
+    1. Click the canvas to start game
+    2. Let the ball freely bounce until collides the a pillar
+    3. the canvas changes to "Oops" as expected
+    4. The collision mechanic of the game is working as expected 
+
+3. I expect there to be no sound, if mute button has been clicked:
+    1. Click the mute button above canvas, and verify the text below the mute button changes to "Sound off"
+    2. click the canvas to start game. no starting sound was played when canvas was clicked.
+    3. Let the ball freely bounce, no sound on ball bounce.
+    4. Let the ball freely bounce and hit pillar, no sound when a collision is detected.
+    5. Pass an obstacle and there is no sound to indicate the score incrementing.
+    6. Let the ball collide with a pillar to get to the "Oops!" screen, when clicking to restart, no sound is played to indicate the start of the game.
+    7. This verifies that the mute button is working as expected once clicked.
+
+4. I expect there to be sound, if mute button has not clicked since page loading:
+    1. Upon loading the text underneath the mute button should read "Sound on", this means sound is unmuted by default as expected.
+    2. click the canvas to start game. Starting sound was played when canvas was clicked.
+    3. Let the ball freely bounce, Sound was played on ball bounce.
+    4. Let the ball freely bounce and hit pillar, played sound when a collision is detected.
+    5. Pass an obstacle and a sound is played to indicate the score incrementing.
+    6. Let the ball collide with a pillar to get to the "Oops!" screen, when clicking to restart, a sound is played to indicate the start of the game.
+    7. This verifies that the mute button, by default will be unmuted, and sound will play as expected when conditions are met.
+
+5. Contact form/modal:
+    1. Click the "Contact Me" button in the footer of the page.
+    2. Try to submit the empty form and verify that an error message "Please fill in this field." appears
+    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
+    4. Try to submit the form with all inputs valid and verify that a success message appears.
+    5. If cancel/X in the top right corner, is clicked the *Modal* will close.
 ---
 # Deployment
 ---
