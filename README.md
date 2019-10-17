@@ -39,7 +39,7 @@ Wireframe/Mockup can be found in the files of this repository, under the folder 
 
 
 ---
-**Features to implement in the future
+**Features to implement in the future**
 
 I would like to implement a global highscore, but for that I would need to know more about backend technologies, which is covered later in the course I am currently in.
 I would like to implement a scalable canvas screen but after trying its proved difficult to implement, mainly the verticle attribute of the canvas.
@@ -53,18 +53,20 @@ HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework.
 This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Style Sheets) and JS (JavaScript), all of these play attributes in the actual game. For the actual website I used the Bootstrap 4 framework for positioning of elements, along with css to style the page, I used transparent textures in the css to give the site some character.
 
 1. HTML
-..1 Used in the structuring of the index.html file, also plays a role in coordinates of drawn shapes in the canvas
+..* Used in the structuring of the index.html file, also plays a role in coordinates of drawn shapes in the canvas
 2. CSS
-..2 Is used for the styling of the site, it also draws the background to the canvas game.
+..* Is used for the styling of the site, it also draws the background to the canvas game.
 3. Javascript
-..3 All of the game mechanics are written in Javascript
+..* All of the game mechanics are written in Javascript, in fact everything is Javascript within the canvas other than the background, which is css
 4. Bootstrap 4 
-..4 Used to position elements in the DOM, how I implemented the "Contact Modal", also how I display "Device is too small" message if the screen is under the "sm" breakpoint.
+..* Used to position elements in the DOM, how I implemented the "Contact Modal", also how I display "Device is too small" message if the screen is under the "sm" breakpoint.
 5. Jquery
-..5 I used jQuery to access some of the dom elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
+..* I used jQuery to access some of the dom elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
 
 --- 
 #Testing
+
+
 ---
 #Deployment
 ---
