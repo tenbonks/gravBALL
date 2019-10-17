@@ -27,18 +27,15 @@ As a Developer, I want reach out to a fellow developer, so we can collaborate.
 
 # Features
 
-1.An intuitive, yet simple control mechanism - Simply Hold Down either MOUSE BUTTON, or SPACEBAR to control the ball's gravity, this means you can control how it falls or rises. (Touch control also works)
+* An intuitive, yet simple control mechanism - Simply Hold Down either MOUSE BUTTON, or SPACEBAR to control the ball's gravity, this means you can control how it falls or rises. (Touch control also works)
 
-2.A score tracker - So you can feel the intensity when you're about to beat the high-score
+- A score tracker - So you can feel the intensity when you're about to beat the high-score
 
-3.A locally set High score, in the user's browser - So the highscore won't be reset if the user closes the game
+- A locally set High score, in the user's browser - So the highscore won't be reset if the user closes the game
 
-4.A mute button - To enable the user to play the game without game sounds. information is displayed to the user if sound is on or off.
+- A mute button - To enable the user to play the game without game sounds. information is displayed to the user if sound is on or off.
 
-5.A option to "Contact Me" - For if the user wants to colloborate, or maybe report a bug if found.
-
-
-
+- A option to "Contact Me" - For if the user wants to colloborate, or maybe report a bug if found.
 
 ---
 **Features to implement in the future**
@@ -47,23 +44,25 @@ I would like to implement a global highscore, but for that I would need to know 
 
 I would like to implement a scalable canvas screen but after trying its proved difficult to implement, mainly the verticle attribute of the canvas.
 
+I would like to implement a full screen option, so the canvas will take up the entire displaye, this is mainly for small mobile devices as currently the dimensions of the game wont work on mobile
+
 ---
 
 # Technologies used
 
 HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework.
 
-This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Style Sheets) and JS (JavaScript), all of these play attributes in the actual game. For the actual website I used the Bootstrap 4 framework for positioning of elements, along with css to style the page, I used transparent textures in the css to give the site some character.
+This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Style Sheets) and JS (JavaScript), all of these play attributes in the actual game. For the actual website I used HTML, CSS, the Bootstrap 4 framework for positioning of elements, along with css to style the page, I used transparent textures in the css to give the site some character.
 
-1. HTML - Used in the structuring of the index.html file, also plays a role in coordinates of drawn shapes in the canvas
+* HTML - Used in the structuring of the index.html file, also plays a role in coordinates of drawn shapes in the canvas
 
-2. CSS - Is used for the styling of the site, it also draws the background to the canvas game.
+- CSS - Is used for the styling of the site, it also draws the background to the canvas game.
 
-3. Javascript -  All of the game mechanics are written in Javascript, in fact everything is Javascript within the canvas other than the background, which is css
+- Javascript -  All of the game mechanics are written in Javascript, in fact everything is Javascript within the canvas other than the background, which is css
 
-4. Bootstrap 4 - Used to position elements in the DOM, how I implemented the "Contact Modal", also how I display "Device is too small" message if the screen is under the "sm" breakpoint.
+- Bootstrap 4 - Used to position elements in the DOM, how I implemented the "Contact Modal", also how I display "Device is too small" message if the screen is under the "sm" breakpoint.
 
-5. Jquery - I used jQuery to access some of the DOM elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
+- Jquery - I used jQuery to access some of the DOM elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
 
 
 
@@ -76,13 +75,13 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
     1. Load the website.
     2. Check the canvas element to see if the expected function is running (drawStart).
     3. Click the canvas to see if the gamestate changes as expected (drawGame) is now running.
-    4. The boot process of the game is working as expected.
+    4. This verifies the boot process of the game is working as expected.
 
 2. does gravBALL change to "Oops!" (drawLose) screen if collision is detected:
     1. Click the canvas to start game.
     2. Let the ball freely bounce until collides the a pillar.
     3. the canvas changes to "Oops" as expected.
-    4. The collision mechanic of the game is working as expected.
+    4. This verifies that the collision mechanic of the game is working as expected.
 
 3. I expect there to be no sound, if mute button has been clicked since the page loaded:
     1. Click the mute button above canvas, and verify the text below the mute button changes to "Sound off".
@@ -108,16 +107,30 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears
     4. Try to submit the form with all inputs valid and verify that a success message appears.
     5. If cancel/X in the top right corner, is clicked the *Modal* will close.
+
+5. I expect the DOM to display a message saying the screen is too small, and the game canvas not to be displayed, if page is loaded under the small Bootstrap breakpoint:
+    1. Load the page.
+    2. Click on developer tools, and select "Toggle device toolbar" from the options.
+    3. Check the expected message is displayed
+    4. Check the game canvas is not being displayed.
+    5. This is verifies it is functioning as expected.
 ---
 # Deployment
+
+    The deployment of this site was acheived 
 ---
 # Credits
 **Content**
 **Media**
+
 PaulMorek via freesound | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
+
 suntemple via freesound | game lose noise | https://freesound.org/people/suntemple/sounds/253174/
+
 leviclaassen via freesound | noise on game start | https://freesound.org/people/leviclaassen/sounds/107786/
+
 michorvath via freesound | plays on ball bounce | https://freesound.org/people/michorvath/sounds/269718/
+
 Textured Backgrounds via https://www.transparenttextures.com/
 
 **Acknowledgements**
