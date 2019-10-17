@@ -73,19 +73,19 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 I planned on using the Jasmine Framework for testing the game, but it is mainly DOM manipulation and requires certain conditions to be met while the game is running, so manual testing seemed to be the best option for me to test *"gravBALL"*
 
 1. gravBall on page load, should display a start screen, if clicked should start to draw the game elements:
-    1. Load the website
-    2. Check the canvas element to see if the expected function is running (drawStart)
-    3. Click the canvas to see if the gamestate changes as expected (drawGame) is now running
-    4. The boot process of the game is working as expected
+    1. Load the website.
+    2. Check the canvas element to see if the expected function is running (drawStart).
+    3. Click the canvas to see if the gamestate changes as expected (drawGame) is now running.
+    4. The boot process of the game is working as expected.
 
 2. does gravBALL change to "Oops!" (drawLose) screen if collision is detected:
-    1. Click the canvas to start game
-    2. Let the ball freely bounce until collides the a pillar
-    3. the canvas changes to "Oops" as expected
-    4. The collision mechanic of the game is working as expected 
+    1. Click the canvas to start game.
+    2. Let the ball freely bounce until collides the a pillar.
+    3. the canvas changes to "Oops" as expected.
+    4. The collision mechanic of the game is working as expected.
 
-3. I expect there to be no sound, if mute button has been clicked:
-    1. Click the mute button above canvas, and verify the text below the mute button changes to "Sound off"
+3. I expect there to be no sound, if mute button has been clicked since the page loaded:
+    1. Click the mute button above canvas, and verify the text below the mute button changes to "Sound off".
     2. click the canvas to start game. no starting sound was played when canvas was clicked.
     3. Let the ball freely bounce, no sound on ball bounce.
     4. Let the ball freely bounce and hit pillar, no sound when a collision is detected.
