@@ -71,7 +71,7 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 
 I planned on using the Jasmine Framework for testing the game, but it is mainly DOM manipulation and requires certain conditions to be met while the game is running, so manual testing seemed to be the best option for me to test *"gravBALL"*
 
-1. gravBall on page load, should display a start screen, if clicked should start to draw the game elements:
+1. gravBall on page load, should display a start screen, if clicked should start to draw the game (drawGame()) and update the positions)
     1. Load the website.
     2. Check the canvas element to see if the expected function is running (drawStart).
     3. Click the canvas to see if the gamestate changes as expected (drawGame) is now running.
@@ -114,6 +114,16 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
     3. Check the expected message is displayed
     4. Check the game canvas is not being displayed.
     5. This is verifies it is functioning as expected.
+
+5. I expect the high score to be kept if the page is reloaded
+    1. Load the page.
+    2. Played the game, got a score of 1.
+    3. Reloaded the page.
+    4. The start screen displays "High Score: 1", also opened developer tools and checked under local storage to see if it was set.
+    5. Local storage "highScore" set to "1".
+    6. repeated step 2, but got a score of 7.
+    7. reloaded page
+    8. The start screen displays "High Score: 7", also opened developer tools and checked under local storage and "highScore" was set to "7".
 ---
 # Deployment
 
@@ -121,17 +131,22 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
 ---
 # Credits
 **Content**
+
+---
+
 **Media**
 
-PaulMorek via freesound | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
+*PaulMorek* via *freesound* | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
 
-suntemple via freesound | game lose noise | https://freesound.org/people/suntemple/sounds/253174/
+*suntemple* via *freesound* | game lose noise | https://freesound.org/people/suntemple/sounds/253174/
 
-leviclaassen via freesound | noise on game start | https://freesound.org/people/leviclaassen/sounds/107786/
+*leviclaassen* via *freesound* | noise on game start | https://freesound.org/people/leviclaassen/sounds/107786/
 
-michorvath via freesound | plays on ball bounce | https://freesound.org/people/michorvath/sounds/269718/
+*michorvath* via *freesound* | plays on ball bounce | https://freesound.org/people/michorvath/sounds/269718/
 
-Textured Backgrounds via https://www.transparenttextures.com/
+Textured Backgrounds | https://www.transparenttextures.com/
+
+---
 
 **Acknowledgements**
 Chris Deleon for basics in canvas game making, via tennis udemy course - this is where I got most of the logic on how to create a game.
