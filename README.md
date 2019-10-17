@@ -9,7 +9,7 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 ---
 
-#UX
+# UX
 
 It is aimed for the casual gamer, who like *physic based reaction games*, such as the classic Helicopter game, well... This is like that, but with a twist. 
 
@@ -25,7 +25,7 @@ As a Developer, I want reach out to a fellow developer, so we can collaborate.
 
 ---
 
-#Features
+# Features
 
 1.An intuitive, yet simple control mechanism - Simply Hold Down either MOUSE BUTTON, or SPACEBAR to control the ball's gravity, this means you can control how it falls or rises. (Touch control also works)
 
@@ -44,11 +44,12 @@ As a Developer, I want reach out to a fellow developer, so we can collaborate.
 **Features to implement in the future**
 
 I would like to implement a global highscore, but for that I would need to know more about backend technologies, which is covered later in the course I am currently in.
+
 I would like to implement a scalable canvas screen but after trying its proved difficult to implement, mainly the verticle attribute of the canvas.
 
-
 ---
-#Technologies used
+
+# Technologies used
 
 HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework.
 
@@ -66,13 +67,13 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 ..* I used jQuery to access some of the dom elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
 
 --- 
-#Testing
+# Testing
 
 
 ---
-#Deployment
+# Deployment
 ---
-#Credits
+# Credits
 **Content**
 **Media**
 PaulMorek via freesound | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
