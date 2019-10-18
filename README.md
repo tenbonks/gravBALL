@@ -124,7 +124,7 @@ I also sent a link out of the deployed state once it was very close to finish, T
     4. Check the game canvas is not being displayed.
     5. This is verifies it is functioning as expected.
 
-5. I expect the high score to be kept if the page is reloaded
+5. I expect the high score to be kept if the page is reloaded, also for the highscore to update if greater than the last.
     1. Load the page.
     2. Played the game, got a score of 1.
     3. Reloaded the page.
@@ -133,6 +133,13 @@ I also sent a link out of the deployed state once it was very close to finish, T
     6. repeated step 2, but got a score of 7.
     7. reloaded page
     8. The start screen displays "High Score: 7", also opened developer tools and checked under local storage and "highScore" was set to "7".
+
+6. I expect the canvas to not register key input if I've clicked outside of the canvas element
+    1. Load the page.
+    2. click inside the canvas to start the game.
+    3. click outside of the canvas once the game has started.
+    4. hold down *spacebar*, the ball freely bounces which means key input isn't being registered
+    5. This verifies it is functioning as as expected.
 
 ---
 
