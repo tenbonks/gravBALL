@@ -87,7 +87,7 @@ var scoreLast = 0;
 var highScore = 0;
 
 //Set highScore to 0 in localstorage IF there isn't any currently
-if(localStorage.getItem("highScore") === null) {
+if(!localStorage.getItem("highScore")) {
     localStorage.setItem("highScore", highScore);
 }
 
