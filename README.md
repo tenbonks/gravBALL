@@ -7,6 +7,8 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 **play the game here...** https://tenbonks.github.io/gravBALL/
 
+![Desktop Demo](assets/images/gravBALL-Capture.png "Desktop Demo")
+
 ---
 
 # UX
@@ -161,11 +163,22 @@ The deployment of this site was acheived with "Github Pages", the process I took
 - Underneath *source*, is a dropdown menu, this is where I selected "master branch".
 - Once "master branch" had been selected, a link to the deployed is provided within the GitHub Pages container.
 
+As a user, how do I get to the deployed site?
+
+* To find the repository, go to GitHub, Search "Ten_Bonks", clic
 ---
 
 # Credits
 
 **Content**
+
+All the content in the site, was written by me.
+
+---
+
+**Media**
+
+gravBALL - Ben Tonks, Github @Ten_Bonks, owner of this repository.
 
 *PaulMorek* via *freesound* | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
 
@@ -178,20 +191,13 @@ The deployment of this site was acheived with "Github Pages", the process I took
 Textured Backgrounds - https://www.transparenttextures.com/
 
 Typography - https://fonts.google.com/
-
----
-
-**Media**
-
-gravBALL - Ben Tonks, Github @Ten_Bonks, owner of this repository.
-
 ---
 
 **Acknowledgements**
 
-Chris Deleon for basics in canvas game making, via tennis udemy course - this is where I got most of the logic on how to create a game.
+Chris Deleon for basics in canvas game making, via tennis udemy course - this is where I got most of the logic on how to create a game. - https://www.udemy.com/course/how-to-program-games/
 
-Code Explained (Youtube Channel) for inspiration on implementing the pillars, via flappy bird tutorial
+Code Explained (Youtube Channel) for inspiration on implementing the pillars, via flappy bird tutorial - https://www.youtube.com/watch?v=L07i4g-zhDA
 
 Spicy Yoghurt for inspiration on implementing a game loop, via a blog post on spicyyoghurt.com
 
@@ -201,4 +207,3 @@ MDN - Used as a learning resource - https://developer.mozilla.org/en-US/docs/Web
 
 Slack #interactive-frontend - Used as a learning resource
 
-library/frameworks used
