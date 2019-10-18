@@ -26,7 +26,10 @@ canvas.addEventListener('mousedown', function (event) {
 
 }, false);
 
-canvas.addEventListener('touchstart', function (event) {
+//Setting lastDownTarget to null stops a referenceError I was having
+lastDownTarget = null;
+
+canvas.addEventListener('touchstart', function (e) {
     gameStarted = true;
     if (paused === true && gameLost === false) {
         togglePause();
@@ -35,8 +38,8 @@ canvas.addEventListener('touchstart', function (event) {
         
     }
 
+    lastDownTarget = e.target;
     //on mousedown, gravity is set to 0
-    lastDownTarget = event.target;
     gravity = 0;
     canvas.addEventListener("touchend", function () {
         //on finger up, gravity is reverted back to 0.5
@@ -86,9 +89,9 @@ var score = 0;
 var scoreLast = 0;
 var highScore = 0;
 
-//Set highScore to 0 in localstorage IF there isn't any currently
+//Set a a local storage item to the key "highScore" and a value of "0", IF it can't retrieve the item "highScore"
 if(!localStorage.getItem("highScore")) {
-    localStorage.setItem("highScore", highScore);
+    localStorage.setItem("highScore", 0);
 }
 
 //Player Variables
@@ -185,7 +188,6 @@ function gameLoop(timeStamp) {
     //this always check the high score in localStorage
     localHighScore = parseInt(localStorage.getItem("highScore"));
 
-
     if (!paused) {
         update(secondsPassed);
 
@@ -227,8 +229,6 @@ function drawGame() {
 
 }
 
-
-
 //When the page is loaded the canvas will display information to prompt the user to click the canvas
 function drawStart() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -242,16 +242,14 @@ function drawStart() {
     
 }
 
-
-
 //If the ball collides this screen will appear, it is a losing splash screen
 function drawLose() {
     gameLost === true;
     
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
     ctx.fillStyle = "#fff";
     ctx.font = "30px Righteous";
-    
     ctx.fillText("Oops!", canvas.width / 2 - 40, canvas.height / 2 - 75);
     
     ctx.font = "20px Righteous";
