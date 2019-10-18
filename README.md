@@ -5,9 +5,11 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 **How far will you be able to get?**
 
-**play the game here...** https://tenbonks.github.io/gravBALL/
+# Demo
 
-![Desktop Demo](assets/images/gravBALL-Capture.png "Desktop Demo")
+**A live demo of the site can be found here...** https://tenbonks.github.io/gravBALL/
+
+![Desktop Demo](./assets/images/gravBALL-Capture.png "Desktop Demo")
 
 ---
 
