@@ -173,7 +173,7 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
 
 * Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/gravBALL.git</code>
 
-- To cut ties with this GitHub repository, type this into the terminal - <code>git remote rm origin.</code>
+- To cut ties with this GitHub repository, type this into the terminal - <code>git remote rm origin</code>
 
 ---
 
