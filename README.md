@@ -40,7 +40,7 @@ As a Developer, I want reach out to a fellow developer, so we can collaborate.
 Note that the "mute" button was implemented as an outcome from a trial of the site, I sent it out via slack, and as a response to the following feedback - 
 
 "Hello, The website looks great, the game is hard:)!
-Just one thing, as a user I could use a sound off/on button." - Zoli
+Just one thing, as a user I could use a sound off/on button." - **Zoli** (A user on Slack)
 
 ---
 **Features to implement in the future**
@@ -146,7 +146,7 @@ I also sent a link out of the deployed state once it was very close to finish, T
 
 # Deployment
 
-The deployment of this site was acheived with "Github Pages", the process I took to acheive this was as follows.
+The deployment of this site was acheived with "Github Pages", the process I took to acheive this as follows.
 
 * I logged into Github, and created a repository, named gravBALL-game-component.
 - I pushed the initial commit, and kept commiting and pushing when any minor, or major change had been made that I was happy with.
