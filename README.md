@@ -49,7 +49,8 @@ I would like to implement a global highscore, but for that I would need to know 
 
 I would like to implement a scalable canvas screen but after trying its proved difficult to implement, mainly the verticle attribute of the canvas.
 
-I would like to implement a full screen option, so the canvas will take up the entire displaye, this is mainly for small mobile devices as currently the dimensions of the game wont work on mobile
+I would like to implement a full screen option, so the canvas will take up the entire display, this is mainly for small mobile devices as currently the dimensions of the game won't work on mobile, Id like to be able to have it work like an app on mobile, as typically you wouldn't visit a website to play a game on mobile devices.
+
 
 ---
 
@@ -159,6 +160,15 @@ The deployment of this site was acheived with "Github Pages", the process I took
 # Credits
 
 **Content**
+
+*PaulMorek* via *freesound* | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
+
+*suntemple* via *freesound* | game lose noise | https://freesound.org/people/suntemple/sounds/253174/
+
+*leviclaassen* via *freesound* | noise on game start | https://freesound.org/people/leviclaassen/sounds/107786/
+
+*michorvath* via *freesound* | plays on ball bounce | https://freesound.org/people/michorvath/sounds/269718/
+
 Textured Backgrounds - https://www.transparenttextures.com/
 
 Typography - https://fonts.google.com/
@@ -179,13 +189,7 @@ Code Explained (Youtube Channel) for inspiration on implementing the pillars, vi
 
 Spicy Yoghurt for inspiration on implementing a game loop, via a blog post on spicyyoghurt.com
 
-*PaulMorek* via *freesound* | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
-
-*suntemple* via *freesound* | game lose noise | https://freesound.org/people/suntemple/sounds/253174/
-
-*leviclaassen* via *freesound* | noise on game start | https://freesound.org/people/leviclaassen/sounds/107786/
-
-*michorvath* via *freesound* | plays on ball bounce | https://freesound.org/people/michorvath/sounds/269718/
+All gradient CSS styles were made using CSS Gradient, a very useful tool for getting the exact gradient you want - https://cssgradient.io/
 
 MDN - Used as a learning resource - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
