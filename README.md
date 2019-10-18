@@ -215,3 +215,5 @@ MDN - Used as a learning resource - https://developer.mozilla.org/en-US/docs/Web
 
 Slack #interactive-frontend - Used as a learning resource
 
+Maranatha Ilesanmi - Valuable guidance as my mentor through this project.
+
