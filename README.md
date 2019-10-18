@@ -81,7 +81,7 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
 
 I also sent a link out of the deployed site once it was very close to finish, This was sent via slack, during this I had no feedback regarding any issues with the working of the site or game.
 
-<details><summary> **Click Here for testing process'** </summary>
+<details><summary>CLICK HERE for testing process'</summary>
 <p>
 
 1. gravBall on page load, should display a start screen, if clicked should start to draw the game and update the canvas
