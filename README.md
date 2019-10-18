@@ -156,7 +156,7 @@ I also sent a link out of the deployed site once it was very close to finish, Th
 
 # Deployment
 
-The deployment of this site was acheived with "Github Pages", the process I took to acheive this as follows.
+**The deployment of this site was acheived with "Github Pages", the process I took to acheive this as follows.**
 
 * I logged into Github, and created a repository, named gravBALL-game-component.
 - I pushed the initial commit, and kept commiting and pushing when any minor, or major change had been made that I was happy with.
@@ -167,9 +167,9 @@ The deployment of this site was acheived with "Github Pages", the process I took
 
 ---
 
-* If you want to run *gravBALL* locally, you can clone this repository into an editor of your choice
+**If you want to run *gravBALL* locally, you can clone this repository into an editor of your choice**
 
-- Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/gravBALL.git</code>
+* Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/gravBALL.git</code>
 
 - To cut ties with this GitHub repository, type this into the terminal - <code>git remote rm origin.</code>
 
