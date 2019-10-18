@@ -198,6 +198,7 @@ gravBALL - Ben Tonks, Github @tenbonks, owner of this repository.
 Textured Backgrounds - https://www.transparenttextures.com/
 
 Typography - https://fonts.google.com/
+
 ---
 
 **Acknowledgements**
