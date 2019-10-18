@@ -79,7 +79,10 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 
 I planned on using the Jasmine Framework for testing the game, but it is mainly DOM manipulation and requires certain conditions to be met while the game is running, so manual testing seemed to be the best option for me to test *"gravBALL"*
 
-I also sent a link out of the deployed state once it was very close to finish, This was sent via slack, during this I had no feedback regarding any issues with the working of the site.
+I also sent a link out of the deployed site once it was very close to finish, This was sent via slack, during this I had no feedback regarding any issues with the working of the site or game.
+
+<details><summary>CLICK ME to open test process'</summary>
+<p>
 
 1. gravBall on page load, should display a start screen, if clicked should start to draw the game and update the canvas
     1. Load the website.
@@ -141,6 +144,9 @@ I also sent a link out of the deployed state once it was very close to finish, T
     3. click outside of the canvas once the game has started.
     4. hold down *spacebar*, the ball freely bounces which means key input isn't being registered
     5. This verifies it is functioning as as expected.
+
+</p>
+</details>
 
 ---
 
