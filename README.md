@@ -37,6 +37,11 @@ As a Developer, I want reach out to a fellow developer, so we can collaborate.
 
 - A option to "Contact Me" - For if the user wants to colloborate, or maybe report a bug if found.
 
+Note that the "mute" button was implemented as an outcome from a trial of the site, I sent it out via slack, and as a response to the following feedback - 
+
+"Hello, The website looks great, the game is hard:)!
+Just one thing, as a user I could use a sound off/on button." - Zoli
+
 ---
 **Features to implement in the future**
 
@@ -72,6 +77,8 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 # Testing
 
 I planned on using the Jasmine Framework for testing the game, but it is mainly DOM manipulation and requires certain conditions to be met while the game is running, so manual testing seemed to be the best option for me to test *"gravBALL"*
+
+I also sent a link out of the deployed state once it was very close to finish, This was sent via slack, during this I had no feedback regarding any issues with the working of the site.
 
 1. gravBall on page load, should display a start screen, if clicked should start to draw the game and update the canvas
     1. Load the website.
@@ -126,17 +133,43 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
     6. repeated step 2, but got a score of 7.
     7. reloaded page
     8. The start screen displays "High Score: 7", also opened developer tools and checked under local storage and "highScore" was set to "7".
+
 ---
+
 # Deployment
 
-    The deployment of this site was acheived 
+    The deployment of this site was acheived with "Github Pages", the process I took to acheive this was as follows.
+
+    * I logged into Github, and created a repository, named gravBALL-game-component.
+    - I pushed the initial commit, and kept commiting and pushing when any minor, or major change had been made that I was happy with.
+    - Once I had the initial commit in place, I clicked settings in the repository page on Github.
+    - I scrolled down to GitHub Pages section within the settings page
+    - Underneath *source*, is a dropdown menu, this is where I selected "master branch".
+    - Once "master branch" had been selected, a link to the deployed is provided within the GitHub Pages container.
+
 ---
 # Credits
+
 **Content**
+Textured Backgrounds - https://www.transparenttextures.com/
+
+Typography - https://fonts.google.com/
 
 ---
 
 **Media**
+
+gravBALL - Ben Tonks, Github @Ten_Bonks, owner of this repository.
+
+---
+
+**Acknowledgements**
+
+Chris Deleon for basics in canvas game making, via tennis udemy course - this is where I got most of the logic on how to create a game.
+
+Code Explained (Youtube Channel) for inspiration on implementing the pillars, via flappy bird tutorial
+
+Spicy Yoghurt for inspiration on implementing a game loop, via a blog post on spicyyoghurt.com
 
 *PaulMorek* via *freesound* | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
 
@@ -146,14 +179,8 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
 
 *michorvath* via *freesound* | plays on ball bounce | https://freesound.org/people/michorvath/sounds/269718/
 
-Textured Backgrounds | https://www.transparenttextures.com/
+MDN - Used as a learning resource - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
----
-
-**Acknowledgements**
-Chris Deleon for basics in canvas game making, via tennis udemy course - this is where I got most of the logic on how to create a game.
-Code Explained (Youtube Channel) for inspiration on implementing the pillars, via flappy bird tutorial
-Spicy Yoghurt for inspiration on implementing a game loop, via a blog post on spicyyoghurt.com
-
+Slack #interactive-frontend - Used as a learning resource
 
 library/frameworks used
