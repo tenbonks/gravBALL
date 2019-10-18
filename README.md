@@ -9,7 +9,7 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 **A live demo of the site can be found here...** https://tenbonks.github.io/gravBALL/
 
-![Desktop Demo](./assets/images/gravBALL-Capture.png "Desktop Demo")
+![Desktop Demo](https://github.com/tenbonks/gravBALL/blob/master/assets/images/gravBALL-Capture.PNG "Desktop Demo")
 
 ---
 
