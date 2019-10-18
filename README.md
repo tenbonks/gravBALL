@@ -50,7 +50,7 @@ I would like to implement a full screen option, so the canvas will take up the e
 
 # Technologies used
 
-HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework.
+HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework, Adobe XD (for design planning).
 
 This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Style Sheets) and JS (JavaScript), all of these play attributes in the actual game. For the actual website I used HTML, CSS, the Bootstrap 4 framework for positioning of elements, along with css to style the page, I used transparent textures in the css to give the site some character.
 
@@ -64,6 +64,8 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 
 - Jquery - I used jQuery to access some of the DOM elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
 
+- Adobe XD - I used Adobe XD for the Mockup and Wireframe stage of development, I also returned to it to create a favicon, as it is easy to work on shapes, and you can specify size in pixels, so I could create a nice purpose built favicon, at 32 x 32 px. 
+
 
 
 --- 
@@ -71,7 +73,7 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 
 I planned on using the Jasmine Framework for testing the game, but it is mainly DOM manipulation and requires certain conditions to be met while the game is running, so manual testing seemed to be the best option for me to test *"gravBALL"*
 
-1. gravBall on page load, should display a start screen, if clicked should start to draw the game (drawGame()) and update the positions)
+1. gravBall on page load, should display a start screen, if clicked should start to draw the game and update the canvas
     1. Load the website.
     2. Check the canvas element to see if the expected function is running (drawStart).
     3. Click the canvas to see if the gamestate changes as expected (drawGame) is now running.
