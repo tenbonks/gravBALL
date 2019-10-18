@@ -7,7 +7,7 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 # Demo
 
-**A live demo of the site can be found here...** https://tenbonks.github.io/gravBALL/
+**A live demo of the site can be found** <a href="https://tenbonks.github.io/gravBALL/" rel="nofollow">Here!</a>
 
 ![Desktop Demo](https://github.com/tenbonks/gravBALL/blob/master/assets/images/gravBALL-Capture.PNG "Desktop Demo")
 
@@ -85,7 +85,7 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
 
 I also sent a link out of the deployed site once it was very close to finish, This was sent via slack, during this I had no feedback regarding any issues with the working of the site or game.
 
-This site was tested on multiple popular browsers, such as (Chrome, Safari, Internet Explorer, FireFox), the only compatibility issue that appeared was the footer and banner background not loading. This was due to me using "RGB" and setting opacity to it, this was rectified by using "RGBA". No other issues across browsers.
+This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, Iphone 4/5/6 and samsung Galaxy. The only compatibility issue that appeared was the footer and banner background not loading. This was due to me using "RGB" and setting opacity to it, this was rectified by using "RGBA". No other issues across browsers.
 
 <details><summary>CLICK HERE for testing process'</summary>
 <p>
@@ -218,4 +218,6 @@ MDN - Used as a learning resource - https://developer.mozilla.org/en-US/docs/Web
 Slack #interactive-frontend - Used as a learning resource
 
 Maranatha Ilesanmi - Valuable guidance as my mentor through this project.
+
+
 
