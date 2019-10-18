@@ -1,4 +1,4 @@
-# gravBALL-game-component
+# gravBALL
 
 Howdy, here is a **gravBALL** a game which involves as good amount of reaction speed, mixed with timing.
 The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN LEFT or RIGHT MOUSE BUTTON, or SPACEBAR (click the canvas if it's not registering input via KEY)
@@ -138,16 +138,17 @@ I also sent a link out of the deployed state once it was very close to finish, T
 
 # Deployment
 
-    The deployment of this site was acheived with "Github Pages", the process I took to acheive this was as follows.
+The deployment of this site was acheived with "Github Pages", the process I took to acheive this was as follows.
 
-    * I logged into Github, and created a repository, named gravBALL-game-component.
-    - I pushed the initial commit, and kept commiting and pushing when any minor, or major change had been made that I was happy with.
-    - Once I had the initial commit in place, I clicked settings in the repository page on Github.
-    - I scrolled down to GitHub Pages section within the settings page
-    - Underneath *source*, is a dropdown menu, this is where I selected "master branch".
-    - Once "master branch" had been selected, a link to the deployed is provided within the GitHub Pages container.
+* I logged into Github, and created a repository, named gravBALL-game-component.
+- I pushed the initial commit, and kept commiting and pushing when any minor, or major change had been made that I was happy with.
+- Once I had the initial commit in place, I clicked settings in the repository page on Github.
+- I scrolled down to GitHub Pages section within the settings page
+- Underneath *source*, is a dropdown menu, this is where I selected "master branch".
+- Once "master branch" had been selected, a link to the deployed is provided within the GitHub Pages container.
 
 ---
+
 # Credits
 
 **Content**
