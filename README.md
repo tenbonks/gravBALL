@@ -165,9 +165,14 @@ The deployment of this site was acheived with "Github Pages", the process I took
 - Underneath *source*, is a dropdown menu, this is where I selected "master branch".
 - Once "master branch" had been selected, a link to the deployed is provided within the GitHub Pages container.
 
-As a user, how do I get to the deployed site?
+---
 
-* To find the repository, go to GitHub, Search "Ten_Bonks", clic
+* If you want to run *gravBALL* locally, you can clone this repository into an editor of your choice
+
+- Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/gravBALL.git</code>
+
+- To cut ties with this GitHub repository, type this into the terminal - <code>git remote rm origin.</code>
+
 ---
 
 # Credits
@@ -180,7 +185,7 @@ All the content in the site, was written by me.
 
 **Media**
 
-gravBALL - Ben Tonks, Github @Ten_Bonks, owner of this repository.
+gravBALL - Ben Tonks, Github @tenbonks, owner of this repository.
 
 *PaulMorek* via *freesound* | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
 
