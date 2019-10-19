@@ -23,10 +23,10 @@ body {
     margin: 0 auto;
     height: 50px;
     width: 150px;
-    background-color: rgba(0,0,0,0.8) ;
+    background-color: rgba(0, 0, 0, 0.8);
     border: 2px solid white;
     border-bottom: 0px;
-    border-radius:100px 100px 0 0;
+    border-radius: 100px 100px 0 0;
     cursor: pointer;
     transition-duration: 100ms;
     -moz-transition-duration: 100ms;
@@ -35,7 +35,7 @@ body {
 
 }
 
-#top-dash > h3 {
+#top-dash>h3 {
     color: white;
     font-family: "Righteous", cursive;
     margin: 0 auto;
@@ -46,13 +46,13 @@ body {
 #top-dash:hover {
     width: 175px;
     border-radius: 100px 100px 0 0;
-    background-color: rgba(53, 52, 52, 0.8) ;
+    background-color: rgba(53, 52, 52, 0.8);
     transition-duration: 100ms;
     -moz-transition-duration: 100ms;
     transition-timing-function: ease-in-out;
     -moz-transition-timing-function: ease-in-out;
-    
-    
+
+
 }
 
 
@@ -78,16 +78,16 @@ h1 {
 #logo {
     padding: 5px 0px;
     width: 100%;
-    background: rgb(0,0,0);
+    background: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.8);
-    }
+}
 
 .footer {
     display: inline-block;
     margin: 0 auto;
     padding: 15px;
     width: 100%;
-    background: rgb(0,0,0);
+    background: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
 }
@@ -109,4 +109,41 @@ h1 {
 .modal-title {
     color: black;
     font-family: "Turret Road", cursive;
+}
+
+/*MEDIA QUERIES*/
+@media (min-width:320px) {
+
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    #canvas {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media (min-width:480px) {
+
+    /* smartphones, Android phones, landscape iPhone */
+    #canvas {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media (min-width:600px) {
+
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    #canvas {
+        width: 500px;
+        height: 375px;
+    }
+}
+
+@media (min-width:801px) {
+
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    #canvas {
+        width: 800px;
+        height: 600px;
+    }
 }
