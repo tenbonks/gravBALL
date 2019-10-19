@@ -17,11 +17,11 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 It is aimed for the casual gamer, who like *physic based reaction games*, such as the classic Helicopter game, well... This is like that, but with a twist. 
 
-The website consits of simply the title, the game, a information box displaying controls, and a footer. the website is essentialy a landing page so no navigation is required, meaning there is no serious navigation through the site, other than getting straight to the game, the only navigation the user will need to take is scroll up or down.
+The website consists of simply the title, the game, a information box displaying controls, and a footer. the website is essentially a landing page so no navigation is required, meaning there is no serious navigation through the site, other than getting straight to the game, the only navigation the user will need to take is scroll up or down.
 
-I gave the user the option to conatact me with the pretense of wanting to report a bug, or contact me for potential collaboration, this is in the footer, and if they wish to proceed, they are prompted to click "Contact Me" button, on doing this a modal will appear at the forefront of the DOM. with the fields required layed out in a clean and appealing fashion.
+I gave the user the option to contact me with the suggestion wanting to report a bug, or contact me for potential collaboration, this is in the footer, and if they wish to proceed, they are prompted to click "Contact Me" button, on doing this a modal will appear at the forefront of the DOM. with the fields required layed out in a clean and appealing fashion.
 
-As a Gamer, I want to play this game, so I can get a highscore.
+As a Gamer, I want to play this game, so I can get a high score.
 
 As a Developer, I want reach out to a fellow developer, so we can collaborate.
 
@@ -35,11 +35,11 @@ As a Developer, I want reach out to a fellow developer, so we can collaborate.
 
 - A score tracker - So you can feel the intensity when you're about to beat the high-score
 
-- A locally set High score, in the user's browser - So the highscore won't be reset if the user closes the game
+- A locally set High score, in the user's browser - So the high score won't be reset if the user closes the game
 
 - A mute button - To enable the user to play the game without game sounds. information is displayed to the user if sound is on or off.
 
-- A option to "Contact Me" - For if the user wants to colloborate, or maybe report a bug if found.
+- A option to "Contact Me" - For if the user wants to collaborate, or maybe report a bug if found, a confirmation email will be sent to the supplied email address.
 
 Note that the "mute" button was implemented as an outcome from a trial of the site, I sent it out via slack, and as a response to the following feedback - 
 
@@ -49,9 +49,9 @@ Just one thing, as a user I could use a sound off/on button." - **Zoli** (A user
 ---
 **Features to implement in the future**
 
-I would like to implement a global highscore, but for that I would need to know more about backend technologies, which is covered later in the course I am currently in.
+I would like to implement a global high score, but for that I would need to know more about back-end technologies, which is covered later in the course I am currently in.
 
-I would like to implement a scalable canvas screen but after trying its proved difficult to implement, mainly the verticle attribute of the canvas.
+I would like to implement a scalable canvas screen but after trying its proved difficult to implement, mainly the vertical attribute of the canvas.
 
 I would like to implement a full screen option, so the canvas will take up the entire display, this is mainly for small mobile devices as currently the dimensions of the game won't work on mobile, Id like to be able to have it work like an app on mobile, as typically you wouldn't visit a website to play a game on mobile devices.
 
@@ -60,7 +60,7 @@ I would like to implement a full screen option, so the canvas will take up the e
 
 # Technologies used
 
-HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework, Adobe XD (for design planning).
+HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework, emailJS , Adobe XD (for design planning).
 
 This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Style Sheets) and JS (JavaScript), all of these play attributes in the actual game. For the actual website I used HTML, CSS, the Bootstrap 4 framework for positioning of elements, along with css to style the page, I used transparent textures in the css to give the site some character.
 
@@ -74,7 +74,9 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 
 - Jquery - I used jQuery to access some of the DOM elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
 
-- Adobe XD - I used Adobe XD for the Mockup and Wireframe stage of development, I also returned to it to create a favicon, as it is easy to work on shapes, and you can specify size in pixels, so I could create a nice purpose built favicon, at 32 x 32 px. 
+- emailJS - I used this to send the supplied fields in the contact form to my email address, an auto reply will be sent to confirm the email was received 
+
+- Adobe XD - I used Adobe XD for the Mockup and Wireframe stage of development, I also returned to it to create a *favicon*, as it is easy to work on shapes, and you can specify size in pixels, so I could create a nice purpose built favicon, at 32 x 32 px. 
 
 
 
@@ -85,7 +87,7 @@ I planned on using the Jasmine Framework for testing the game, but it is mainly 
 
 I also sent a link out of the deployed site once it was very close to finish, This was sent via slack, during this I had no feedback regarding any issues with the working of the site or game.
 
-This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, Iphone 4/5/6 and samsung Galaxy. The only compatibility issue that appeared was the footer and banner background not loading. This was due to me using "RGB" and setting opacity to it, this was rectified by using "RGBA". No other issues across browsers.
+This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, Iphone 4/5/6 and Samsung Galaxy. The only compatibility issue that appeared was the footer and banner background not loading. This was due to me using "RGB" and setting opacity to it, this was rectified by using "RGBA". No other issues across browsers.
 
 <details><summary>CLICK HERE for testing process'</summary>
 <p>
@@ -112,13 +114,13 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
     7. This verifies that the mute button is working as expected once clicked.
 
 4. I expect there to be sound, if mute button has not clicked since page loading:
-    1. Upon loading the text underneath the mute button should read "Sound on", this means sound is unmuted by default as expected.
+    1. Upon loading the text underneath the mute button should read "Sound on", this means sound is on by default as expected.
     2. click the canvas to start game. Starting sound was played when canvas was clicked.
     3. Let the ball freely bounce, Sound was played on ball bounce.
     4. Let the ball freely bounce and hit pillar, played sound when a collision is detected.
     5. Pass an obstacle and a sound is played to indicate the score incrementing.
     6. Let the ball collide with a pillar to get to the "Oops!" screen, when clicking to restart, a sound is played to indicate the start of the game.
-    7. This verifies that the mute button, by default will be unmuted, and sound will play as expected when conditions are met.
+    7. This verifies that by default sound is on, and sound will play as expected when conditions are met.
 
 5. Contact form/modal:
     1. Click the "Contact Me" button in the footer of the page.
@@ -127,29 +129,38 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
     4. Try to submit the form with all inputs valid and verify that a success message appears.
     5. If cancel/X in the top right corner, is clicked the *Modal* will close.
 
-5. I expect the DOM to display a message saying the screen is too small, and the game canvas not to be displayed, if page is loaded under the small Bootstrap breakpoint:
+6. I expect the DOM to display a message saying the screen is too small, and the game canvas not to be displayed, if page is loaded under the small Bootstrap breakpoint:
     1. Load the page.
     2. Click on developer tools, and select "Toggle device toolbar" from the options.
     3. Check the expected message is displayed
     4. Check the game canvas is not being displayed.
     5. This is verifies it is functioning as expected.
 
-5. I expect the high score to be kept if the page is reloaded, also for the highscore to update if greater than the last.
+7. I expect the high score to be kept if the page is reloaded, also for the high score to update if greater than the last.
     1. Load the page.
     2. Played the game, got a score of 1.
     3. Reloaded the page.
     4. The start screen displays "High Score: 1", also opened developer tools and checked under local storage to see if it was set.
-    5. Local storage "highScore" set to "1".
+    5. Local storage "high score" set to "1".
     6. repeated step 2, but got a score of 7.
     7. reloaded page
-    8. The start screen displays "High Score: 7", also opened developer tools and checked under local storage and "highScore" was set to "7".
+    8. The start screen displays "High Score: 7", also opened developer tools and checked under local storage and "high score" was set to "7".
 
-6. I expect the canvas to not register key input if I've clicked outside of the canvas element
+8. I expect the canvas to not register key input if I've clicked outside of the canvas element
     1. Load the page.
     2. click inside the canvas to start the game.
     3. click outside of the canvas once the game has started.
     4. hold down *spacebar*, the ball freely bounces which means key input isn't being registered
     5. This verifies it is functioning as as expected.
+
+9. I expect to receive an email if I correctly fill out all fields of the contact modal
+    1. Fill out the contact form, correctly, as tested in "Test 5", with a different email address to the one emailJS is set up to send to.
+    2. Click "Send!" button.
+    3. Sign into my gmail account, look at most recent email/s.
+    4. The test email was received.
+    5. I logged into the email address I provided in the contact modal.
+    6. The auto reply has been received, confirming the email has been sent.
+    7. This verifies that the contact modal, is working with emailJS as expected.
 
 </p>
 </details>
@@ -158,13 +169,13 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
 
 # Deployment
 
-**The deployment of this site was acheived with "Github Pages", the process I took to acheive this as follows.**
+**The deployment of this site was achieved with "Github Pages", the process I took as follows...**
 
 * I logged into Github, and created a repository, named gravBALL-game-component.
-- I pushed the initial commit, and kept commiting and pushing when any minor, or major change had been made that I was happy with.
+- I pushed the initial commit, and kept committing and pushing when any minor, or major change had been made that I was happy with.
 - Once I had the initial commit in place, I clicked settings in the repository page on Github.
 - I scrolled down to GitHub Pages section within the settings page
-- Underneath *source*, is a dropdown menu, this is where I selected "master branch".
+- Underneath *source*, is a drop-down menu, this is where I selected "master branch".
 - Once "master branch" had been selected, a link to the deployed is provided within the GitHub Pages container.
 
 ---
