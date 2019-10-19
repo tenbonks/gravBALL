@@ -1,7 +1,7 @@
 # gravBALL
 
 Howdy, here is a **gravBALL** a game which involves as good amount of reaction speed, mixed with timing.
-The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN LEFT or RIGHT MOUSE BUTTON, or SPACEBAR (click the canvas if it's not registering input via KEY)
+The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN LEFT or RIGHT MOUSE BUTTON, or SPACEBAR  (click the canvas if it's not registering input via KEY). also touch input can be used if on mobile device, but I didn't design this game to work on mobile, if you look at what I plan to implement in the future, located further down in the README, resizing the canvas to work on mobile is one on my todo list.
 
 **How far will you be able to get?**
 
@@ -53,8 +53,7 @@ I would like to implement a global high score, but for that I would need to know
 
 I would like to implement a scalable canvas screen but after trying its proved difficult to implement, mainly the vertical attribute of the canvas.
 
-I would like to implement a full screen option, so the canvas will take up the entire display, this is mainly for small mobile devices as currently the dimensions of the game won't work on mobile, Id like to be able to have it work like an app on mobile, as typically you wouldn't visit a website to play a game on mobile devices.
-
+I would like to implement a full screen option, so the canvas will take up the entire display, this is mainly for small mobile devices as currently the dimensions of the game won't work on mobile, Id like to be able to have it work like an app on mobile, as typically you wouldn't visit a website to play a game on mobile devices. This I tried to implement near the end of development but it was proving a tricky challenge.
 
 ---
 
