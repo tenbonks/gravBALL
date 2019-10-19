@@ -16,13 +16,23 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <!--emailJS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_zryNwhPPBjpsX5Jah5OM5");
+        })();
+    </script>
+    <!--/EmailJS-->
 </head>
 
 <body>
 
     <!--Article wraps all elements in the body-->
     <article class="main container-fluid no-gutters">
-        
+
         <!--Logo-->
         <section class="logo">
             <div class="row no-gutters">
@@ -108,10 +118,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form onsubmit="return sendMail(this);" method="POST">
                             <div class="form-group">
                                 <label for="InputEmail">Email</label>
-                                <input label="email" type="email" class="form-control" id="Inputemail"
+                                <input label="email" type="email" name="email" class="form-control" id="Inputemail"
                                     aria-describedby="emailHelp" placeholder="Enter email" required>
                                 <small id="emailHelp" class="form-text text-muted">This will never be shared with
                                     anyone else.</small>
@@ -124,7 +134,7 @@
                             <div class="form-group">
                                 <label for="Inputmessage">Message</label>
                                 <br>
-                                <textarea rows="5" id="subject" name="subject" class="form-control"
+                                <textarea rows="5" id="subject" name="message" class="form-control"
                                     placeholder="Type your message here" required></textarea>
                             </div>
                     </div>
@@ -138,7 +148,7 @@
         </div>
         </div>
         <!--/Modal-->
-    
+
     </article>
 
     <!-------------------------------------------------------------------------------------------------------------------LOAD SCRIPTS, after html to make sure html is loaded first-->
@@ -153,8 +163,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
+
+    <script src="sendEmail.js"></script>
     <script src="gravBall.js"></script>
 </body>
 
 </html>
-
