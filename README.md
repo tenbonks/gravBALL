@@ -17,11 +17,11 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 It is aimed for the casual gamer, who like *physic based reaction games*, such as the classic Helicopter game, well... This is like that, but with a twist. 
 
-The website consists of the title, the game (with a mute button above), a information box displaying controls, and a footer. the website is essentially a landing page meaning there is no serious navigation through the site, other than getting straight to the game, the only navigation the user will need to take is scroll up or down.
+The website consists of the title, the game (with a mute button above), a information box displaying controls, and a footer. The website is essentially a landing page meaning there is no serious navigation through the site, other than getting straight to the game, the only navigation the user will need to take is scroll up or down.
 
 If the user is on a screen size too small, the canvas and controls info will be hidden, and a message will display the appropriate info to them, and to prompt the user to view in landscape.
 
-I gave the user the option to contact me with the suggestion wanting to report a bug, or contact me for potential collaboration, this is in the footer, and if they wish to proceed, they are prompted to click "Contact Me" button, on doing this a modal will appear at the forefront of the DOM. with the fields required layed out in a clean and appealing fashion.
+I gave the user the option to contact me with the suggestion wanting to report a bug, or contact me for potential collaboration, this is in the footer, and if they wish to proceed, they are prompted to click "Contact Me" button, on doing this a modal will appear at the forefront of the DOM. With the fields required layed out in a clean and appealing fashion.
 
 As a Gamer, I want to play this game, so I can get a high score.
 
@@ -59,7 +59,7 @@ I would like to implement a full screen option, so the canvas will take up the e
 
 I would like to implement a auto scale feature so the canvas would responsively fit in the screen size, but I was having problems with this, I think it was my use of bootstrap which was making it a bit more complicated, so as a last minute workaround I added media breakpoints into the CSS, so the canvas has preset sizes which keeps the aspect ratio intact. Looking back I wouldn't of developed this game in (4:3) as its not really friendly for mobile phones, due to their narrow and long screen.
 
-I would like to come back to this game, and following the way I've developed gravBALL in vanilla JS, develop it in a framework such as Phaser3, I stumbled across phaser recently and thought it looked Ideal for the game I was making, but wouldn't of been feasible to get rid of the work I had done and to learn how to use the framework. The benefit of it being perfect for mobile development, with the ease of developing the game to work as a "Facebook Messenger" game. Personally I see this as the better way to release a game of this sort, as it would be easier to access the game, and the highscore would be able to be set between friends and such.
+I would like to come back to this game, and following the way I've developed gravBALL in vanilla JS, develop it in a framework such as Phaser3, I stumbled across Phaser recently and thought it looked ideal for the game I was making, but wouldn't of been feasible to get rid of the work I had done and to learn how to use the framework. The benefit of it being perfect for mobile development, with the ease of developing the game to work as a "Facebook Messenger" game. Personally I see this as the better way to release a game of this sort, as it would be easier to access the game, and the highscore would be able to be set between friends and such.
 
 ---
 
@@ -104,15 +104,15 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
     3. Click the canvas to see if the gamestate changes as expected (drawGame) is now running.
     4. This verifies the boot process of the game is working as expected.
 
-2. does gravBALL change to "Oops!" (drawLose) screen if collision is detected:
+2. Does gravBALL change to "Oops!" (drawLose) screen if collision is detected:
     1. Click the canvas to start game.
-    2. Let the ball freely bounce until collides the a pillar.
-    3. the canvas changes to "Oops" as expected.
+    2. Let the ball freely bounce until collides with a pillar.
+    3. The canvas changes to "Oops" as expected.
     4. This verifies that the collision mechanic of the game is working as expected.
 
 3. I expect there to be no sound, if mute button has been clicked since the page loaded:
     1. Click the mute button above canvas, and verify the text below the mute button changes to "Sound off".
-    2. click the canvas to start game. no starting sound was played when canvas was clicked.
+    2. Click the canvas to start game. no starting sound was played when canvas was clicked.
     3. Let the ball freely bounce, no sound on ball bounce.
     4. Let the ball freely bounce and hit pillar, no sound when a collision is detected.
     5. Pass an obstacle and there is no sound to indicate the score incrementing.
@@ -121,7 +121,7 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
 
 4. I expect there to be sound, if mute button has not clicked since page loading:
     1. Upon loading the text underneath the mute button should read "Sound on", this means sound is on by default as expected.
-    2. click the canvas to start game. Starting sound was played when canvas was clicked.
+    2. Click the canvas to start game. Starting sound was played when canvas was clicked.
     3. Let the ball freely bounce, Sound was played on ball bounce.
     4. Let the ball freely bounce and hit pillar, played sound when a collision is detected.
     5. Pass an obstacle and a sound is played to indicate the score incrementing.
@@ -148,14 +148,14 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
     3. Reloaded the page.
     4. The start screen displays "High Score: 1", also opened developer tools and checked under local storage to see if it was set.
     5. Local storage "high score" set to "1".
-    6. repeated step 2, but got a score of 7.
-    7. reloaded page
+    6. Repeated step 2, but got a score of 7.
+    7. Reloaded page
     8. The start screen displays "High Score: 7", also opened developer tools and checked under local storage and "high score" was set to "7".
 
 8. I expect the canvas to not register key input if I've clicked outside of the canvas element
     1. Load the page.
-    2. click inside the canvas to start the game.
-    3. click outside of the canvas once the game has started.
+    2. Click inside the canvas to start the game.
+    3. Click outside of the canvas once the game has started.
     4. hold down *spacebar*, the ball freely bounces which means key input isn't being registered
     5. This verifies it is functioning as as expected.
 
