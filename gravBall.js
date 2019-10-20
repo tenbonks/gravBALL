@@ -7,7 +7,7 @@ function init() {
 }
 //Listen for input
 //important that this code is listening for event in canvas element, as it sets the target for key input to register
-canvas.addEventListener('mousedown', function (event) {
+canvas.addEventListener('mousedown', function () {
     gameStarted = true;
     if (paused === true && muted === false) {
         GAME_START.play();        
@@ -16,8 +16,8 @@ canvas.addEventListener('mousedown', function (event) {
         togglePause();
     }
     
-    //on mousedown, gravity is set to 0
-    lastDownTarget = event.target;
+    
+    //on mouse down, set gravity to 0
     gravity = 0;
     canvas.addEventListener("mouseup", function () {
         //on mouse up, gravity is reverted back to 0.5
@@ -26,10 +26,7 @@ canvas.addEventListener('mousedown', function (event) {
 
 }, false);
 
-//Setting lastDownTarget to null stops a referenceError I was having
-lastDownTarget = null;
-
-canvas.addEventListener('touchstart', function (e) {
+canvas.addEventListener('touchstart', function () {
     gameStarted = true;
     if (paused === true && gameLost === false) {
         togglePause();
@@ -38,8 +35,8 @@ canvas.addEventListener('touchstart', function (e) {
         
     }
 
-    lastDownTarget = e.target;
-    //on mousedown, gravity is set to 0
+    
+    //on touchstart, gravity is set to 0
     gravity = 0;
     canvas.addEventListener("touchend", function () {
         //on finger up, gravity is reverted back to 0.5
@@ -53,19 +50,7 @@ $('body').on('contextmenu', '#canvas', function (e) {
     return false;
 });
 
-window.addEventListener('keydown', function (e) {
-    //if the last target was canvas, allow key input, NOTE KEYCODE 32 is SPACEBAR 
-    if (lastDownTarget == canvas && e.keyCode == 32) {
-        //the line below disables default input to html document, this stops page scroll when spacebar is pressed
-        e.preventDefault();
-        //on keydown, gravity is set to 0
-        gravity = 0;
-        document.addEventListener("keyup", function () {
-            //on keyup, gravity is reverted to 0.5
-            gravity = 0.5;
-        });
-    }
-}, false);
+
 
 $("#top-dash").on("click", function(){
     toggleMute();
