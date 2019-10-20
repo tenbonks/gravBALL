@@ -91,7 +91,7 @@ This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Styl
 I planned on using the Jasmine Framework for testing the game, but it is mainly DOM manipulation and requires certain conditions to be met while the game is running, so manual testing seemed to be the best option for me to test *"gravBALL"*
 
 I also sent a link out of the deployed site once it was very close to finish, This was sent via slack, during this I had feedback concerning the canvas not fitting properly on mobile devices, and an issue with the modal form, caused by spacebar being a input to the game, resulting in spacebar not adding spaces.
-Both of these issues have been fixed, I removed spacebar as a control as it wasn't really needed, and added breakpoints in the css to reduce the canvas size while keeping the aspect ratio.
+Both of these issues have been fixed, I removed spacebar as a control as it wasn't really needed, and added breakpoints in the css to reduce the canvas size while keeping the aspect ratio. The canvas CAN be bit too big to fit vertical in the viewport height of certain mobile phones (Huawei P smart), but in general it works a lot better than it did before and the game is playable on small devices.
 
 This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, Iphone 4/5/6 and Samsung Galaxy. The only compatibility issue that appeared was the footer and banner background not loading. This was due to me using "RGB" and setting opacity to it, this was rectified by using "RGBA". No other issues across browsers.
 
@@ -183,6 +183,8 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
 - I scrolled down to GitHub Pages section within the settings page
 - Underneath *source*, is a drop-down menu, this is where I selected "master branch".
 - Once "master branch" had been selected, a link to the deployed is provided within the GitHub Pages container.
+
+There is no difference between the deployed version and the development version.
 
 ---
 
