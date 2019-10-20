@@ -10,13 +10,13 @@ function init() {
 canvas.addEventListener('mousedown', function () {
     gameStarted = true;
     if (paused === true && muted === false) {
-        GAME_START.play();        
+        GAME_START.play();
     }
     if (paused === true && gameLost === false) {
         togglePause();
     }
-    
-    
+
+
     //on mouse down, set gravity to 0
     gravity = 0;
     canvas.addEventListener("mouseup", function () {
@@ -30,12 +30,12 @@ canvas.addEventListener('touchstart', function () {
     gameStarted = true;
     if (paused === true && gameLost === false) {
         togglePause();
-        
+
         GAME_START.play();
-        
+
     }
 
-    
+
     //on touchstart, gravity is set to 0
     gravity = 0;
     canvas.addEventListener("touchend", function () {
@@ -52,7 +52,7 @@ $('body').on('contextmenu', '#canvas', function (e) {
 
 
 
-$("#top-dash").on("click", function(){
+$("#top-dash").on("click", function () {
     toggleMute();
 });
 
@@ -61,9 +61,9 @@ window.onload = init;
 //Audio Variables
 
 var SCORE_BEEP = new Audio("./assets/audio/score_beep.wav");
-var COLLIDE_BEEP = new Audio ("./assets/audio/lose.wav");
-var GAME_START = new Audio ("./assets/audio/start.wav");
-var BALL_BOUNCE = new Audio ("./assets/audio/ball-bounce.wav");
+var COLLIDE_BEEP = new Audio("./assets/audio/lose.wav");
+var GAME_START = new Audio("./assets/audio/start.wav");
+var BALL_BOUNCE = new Audio("./assets/audio/ball-bounce.wav");
 
 //Game variables
 var paused = true;
@@ -75,7 +75,7 @@ var scoreLast = 0;
 var highScore = 0;
 
 //Set a a local storage item to the key "highScore" and a value of "0", IF it can't retrieve the item "highScore"
-if(!localStorage.getItem("highScore")) {
+if (!localStorage.getItem("highScore")) {
     localStorage.setItem("highScore", 0);
 }
 
@@ -120,7 +120,7 @@ function movePillars() {
     //IF the pillar is nearly off the canvas
     if (pillarX == (0 - pillarWidth)) {
 
-        gap --;
+        gap--;
         pillarX = canvas.width;
         pillarY = Math.floor(Math.random() * pillarHeight) - pillarHeight;
 
@@ -130,17 +130,17 @@ function movePillars() {
 function detectCollision() {
     //detect collision, reload canvas if player hits obstacle
     if ((playerX - playerRadius) + (playerRadius * 1.65) >= pillarX && (playerX - playerRadius) <= pillarX + pillarWidth && (playerY - playerRadius <= pillarY + pillarHeight || playerY + playerRadius >= pillarY + constant)) {
-        
-        if(muted === false){
-        COLLIDE_BEEP.play();
+
+        if (muted === false) {
+            COLLIDE_BEEP.play();
         }
         //if the player collides, pauses the drawGame function and will run the drawLose function
         togglePause();
-        
+
         //then set scoreLast to what was just scored, this is displayed in the drawLose function
         scoreLast = score;
         checkHighScore();
-        
+
         //reset the score to 0, needs to be after the line of code above
         score = 0;
         //reset the pillars to end of canvas and the gap will be set at a random height
@@ -153,8 +153,8 @@ function incrementScore() {
     //if the pillar has passed, increment the score
     if (pillarX == playerX - playerRadius - pillarWidth) {
         score++;
-        if(muted === false)
-        SCORE_BEEP.play();
+        if (muted === false)
+            SCORE_BEEP.play();
     }
 }
 
@@ -196,7 +196,7 @@ function update() {
 }
 
 function drawGame() {
-    
+
     //clear screen before every frame
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -224,19 +224,19 @@ function drawStart() {
     ctx.fillText("View Controls Below", canvas.width / 2 - 90, canvas.height - 20);
 
     isItMute();
-    
+
 }
 
 //If the ball collides this screen will appear, it is a losing splash screen
 function drawLose() {
     gameLost === true;
-    
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     ctx.fillStyle = "#fff";
     ctx.font = "30px Righteous";
     ctx.fillText("Oops!", canvas.width / 2 - 40, canvas.height / 2 - 75);
-    
+
     ctx.font = "20px Righteous";
     ctx.fillText(`Scored: ${scoreLast}`, canvas.width / 2 - 40, canvas.height / 2 - 35);
     ctx.fillText(`High Score: ${localHighScore}`, canvas.width / 2 - 65, canvas.height / 2 - 0);
@@ -256,19 +256,19 @@ function togglePause() {
 }
 
 function toggleMute() {
-    if(!muted){
+    if (!muted) {
         muted = true;
-    } else if (muted){
+    } else if (muted) {
         muted = false;
     }
 }
 
 //This will display to the user on the start and lose screen if sound is on or off
-function isItMute () {
-    if(muted === false) {
-        ctx.fillText("Sound On", canvas.width / 2 - 45, 0 + 25); 
+function isItMute() {
+    if (muted === false) {
+        ctx.fillText("Sound On", canvas.width / 2 - 45, 0 + 25);
     } else {
-        ctx.fillText("Sound Off", canvas.width / 2 - 45, 0 + 25);  
+        ctx.fillText("Sound Off", canvas.width / 2 - 45, 0 + 25);
     }
 }
 
@@ -276,17 +276,17 @@ function isItMute () {
 function applyGravity() {
     playerY += vy;
     vy += gravity;
-    
+
     //if the player hits the bottom of the canvas
     if (playerY + playerRadius > canvas.height) {
         //player Y cant exceed the canvas height - playerRadius, this stops it from going off screen
         playerX = playerX;
         playerY = canvas.height - playerRadius;
-        
-        if(muted === false) {
-        BALL_BOUNCE.play();
+
+        if (muted === false) {
+            BALL_BOUNCE.play();
         }
-        
+
         //velocity needs to be reset otherwise it will stick to the floor
         vx = 0;
         vy *= -bounce_factor;
@@ -294,11 +294,11 @@ function applyGravity() {
     } else if (playerY - playerRadius < 0) {
         playerX = playerX;
         playerY = 0 + playerRadius;
-        
-        if(muted === false) {
-        BALL_BOUNCE.play();
-        }        
-        
+
+        if (muted === false) {
+            BALL_BOUNCE.play();
+        }
+
         //the same as the code above, this time player Y cant exceed the top, and will bounce from the top
         vx = 0;
         vy *= -bounce_factor;
