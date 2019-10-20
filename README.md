@@ -1,7 +1,7 @@
 # gravBALL
 
-Howdy, here is a **gravBALL** a game which involves as good amount of reaction speed, mixed with timing.
-The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN LEFT or RIGHT MOUSE BUTTON, or TOUCH AND can be used if on mobile device. I designed this game desktop first, which isn't ideal, if you look at what I plan to implement in the future, located further down in the README, you'll see what I plan to do with this game and the changes I want to make.
+Howdy, here is a **gravBALL**, a game which involves as good amount of reaction speed, mixed with timing.
+The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN LEFT or RIGHT MOUSE BUTTON, or TOUCH AND HOLD can be used if on mobile device. I designed this game desktop first, which isn't ideal, if you look at what I plan to implement in the future, located further down in the README, you'll see what I plan to do with this game and the changes I want to make.
 
 **How far will you be able to get?**
 
@@ -17,9 +17,9 @@ The goal is to get past the obstacles by manipulating gravity, simply HOLD DOWN 
 
 It is aimed for the casual gamer, who like *physic based reaction games*, such as the classic Helicopter game, well... This is like that, but with a twist. 
 
-The website consists of simply the title, the game (with a mute button above), a information box displaying controls, and a footer. the website is essentially a landing page so no navigation is required, meaning there is no serious navigation through the site, other than getting straight to the game, the only navigation the user will need to take is scroll up or down.
+The website consists of the title, the game (with a mute button above), a information box displaying controls, and a footer. the website is essentially a landing page meaning there is no serious navigation through the site, other than getting straight to the game, the only navigation the user will need to take is scroll up or down.
 
-If the user is on a screen size too small, the canvas and controls will be hidden, and a message will display the appropriate info to them, and to prompt the user to view in landscape.
+If the user is on a screen size too small, the canvas and controls info will be hidden, and a message will display the appropriate info to them, and to prompt the user to view in landscape.
 
 I gave the user the option to contact me with the suggestion wanting to report a bug, or contact me for potential collaboration, this is in the footer, and if they wish to proceed, they are prompted to click "Contact Me" button, on doing this a modal will appear at the forefront of the DOM. with the fields required layed out in a clean and appealing fashion.
 
@@ -33,11 +33,11 @@ As a Developer, I want reach out to a fellow developer, so we can collaborate.
 
 # Features
 
-* An intuitive, yet simple control mechanism - Simply Hold Down either MOUSE BUTTON, or SPACEBAR to control the ball's gravity, this means you can control how it falls or rises. (Touch control also works)
+* An intuitive, yet simple control mechanism - Simply Hold Down either MOUSE BUTTON, or TOUCH and hold to control the ball's gravity, this means you can control how it falls or rises.
 
 - A score tracker - So you can feel the intensity when you're about to beat the high-score
 
-- A locally set High score, in the user's browser - So the high score won't be reset if the user closes the game
+- A locally set High score, in the user's browser - So the high score won't be reset if the user closes the game, this is displayed in the canvas.
 
 - A mute button - To enable the user to play the game without game sounds. information is displayed to the user if sound is on or off.
 
@@ -232,9 +232,11 @@ All gradient CSS styles were made using CSS Gradient, a very useful tool for get
 
 MDN - Used as a learning resource - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
-Slack #interactive-frontend - Used as a learning resource
+Slack #interactive-frontend - Used as a learning resource for more obscure questions.
 
 Maranatha Ilesanmi - Valuable guidance as my mentor through this project.
+
+Feedback from these users on the #peer-code-review proved useful in testing and helped pin point the finishing touches that were to be made | @Eventyret_mentor, @Orla Madden, @Zoli. thanks for your time and feedback you provided.
 
 
 
