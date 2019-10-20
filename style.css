@@ -13,9 +13,6 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
-
-
 }
 
 #top-dash {
@@ -32,7 +29,6 @@ body {
     -moz-transition-duration: 100ms;
     transition-timing-function: ease-in-out;
     -moz-transition-timing-function: ease-in-out;
-
 }
 
 #top-dash>h3 {
@@ -40,7 +36,6 @@ body {
     font-family: "Righteous", cursive;
     margin: 0 auto;
     padding: 5px 0 5px 0;
-
 }
 
 #top-dash:hover {
@@ -51,8 +46,6 @@ body {
     -moz-transition-duration: 100ms;
     transition-timing-function: ease-in-out;
     -moz-transition-timing-function: ease-in-out;
-
-
 }
 
 
@@ -103,7 +96,6 @@ h1 {
     color: white;
     background-color: #040f12;
     background-image: url("./assets/images/subtle-white-feathers.png");
-
 }
 
 .modal-title {
