@@ -53,7 +53,9 @@ I would like to implement a global high score, but for that I would need to know
 
 I would like to implement a scalable canvas screen but after trying its proved difficult to implement, mainly the vertical attribute of the canvas.
 
-I would like to implement a full screen option, so the canvas will take up the entire display, this is mainly for small mobile devices as currently the dimensions of the game won't work on mobile, Id like to be able to have it work like an app on mobile, as typically you wouldn't visit a website to play a game on mobile devices. This I tried to implement near the end of development but it was proving a tricky challenge.
+I would like to implement a full screen option, so the canvas will take up the entire display, this is mainly for small mobile devices as currently the dimensions of the game won't work on mobile, Id like to be able to have it work like an app on mobile, as typically you wouldn't visit a website to play a game on mobile devices. This I tried to implement near the end of development but it was proving a tricky challenge. I used media queries to scale the canvas down at specific breakpoints, but the aspect ratio I developed the game in (4:3) is an akward one to get to fit on mobile phone screens, as they are narrow and tall, and in landscape they haven't got much height. 
+
+I would like to come back to this game, and following the way I've developed gravBALL in vanilla JS, develop it in a framework such as Phaser3, I stumbled across phaser recently and thought it looked Ideal for the game I was making, but wouldn't of been feasible to get rid of the work I had done and to learn how to use the framework. The benefit of it being perfect for mobile development, with the ease of developing the game to work as a "Facebook Messenger" game. Personally I see this as the better way to release a game of this sort, as it would be easier to access and the highscore would be able to be set between friends and such. 
 
 ---
 
