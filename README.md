@@ -238,5 +238,6 @@ Maranatha Ilesanmi - Valuable guidance as my mentor through this project.
 
 Feedback from these users on the #peer-code-review proved useful in testing and helped pin point the finishing touches that were to be made | @Eventyret_mentor, @Orla Madden, @Zoli. thanks for your time and feedback you provided.
 
+The code in stickyFooter was NOT written by me, and is accredited to "HenryW" on stackoverflow - https://stackoverflow.com/questions/10099422/flushing-footer-to-bottom-of-the-page-twitter-bootstrap
 
 
