@@ -52,11 +52,23 @@ $('body').on('contextmenu', '#canvas', function (e) {
 
 
 
-$("#top-dash").on("click", function () {
+$("#mute-btn").on("click", function () {
     toggleMute();
 });
 
+$("#fullscreen-btn").on("click", fullscreen);
+
 window.onload = init;
+
+function fullscreen() {
+    if (canvas.webkitRequestFullScreen) {
+        canvas.webkitRequestFullScreen();
+    } else {
+        canvas.mozRequestFullScreen();
+    }
+}
+
+
 
 //Audio Variables
 
@@ -318,3 +330,7 @@ function colorRect(leftX, topY, width, height, drawColor) {
     ctx.fillStyle = drawColor;
     ctx.fillRect(leftX, topY, width, height);
 }
+
+// Get the canvas element form the page
+
+
